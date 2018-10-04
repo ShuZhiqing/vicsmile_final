@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer"></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet and
+                    Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">China</li>
+            </ol>
+        </div>
+         <div class="row" style="min-height: 650px">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="margin-bottom: 150px;">
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            China
+        </h2>
+                <div class="inner">
+                    Average daily Chinese nutrition intake has high to very high amount of vitamin A, B12, protein, calcium, phosphorus, vitamin B6, and sugar.
+                    This is due to the fact, people of Chinese background consume a lot of animal products, fruit, and vegetables.
+                    However, they need to reduce sugar intake that is mainly comes naturally from the vegetables and increase the intake of vitamin C to satisfy recommended daily value.
+                    <br>
+                    <br>
+                    Food source rich in:
+                    <ul>
+                        <li>Vitamin C: broccoli, spinach, orange</li>
+                    </ul>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="summary">
+                            Bao can be found everywhere in China.
+                            These light and fluffy buns come stuffed with a range of fillings, from roasted pork to sweet egg custard.
+                            Noodles or Gaifan, which translates as covered rice, a collective name for a meal consisting of a portion of rice and a serving of a meat or vegetable dish is prominent for lunch.
+                            During dinner time, Hot Pot is a big part of China's food culture, especially in Sichuan and Chongqing.
+                            There is a tea culture called Yum Cha in Cantonese dominated region of China. They usually drink tea and dim sum around brunch time and for afternoon tea.
+                            Usually, Chinese people do not add sugar into their tea and most of dim sum are salty and sour, however, some of them are quite sweet like white sugar sponge cake and coconut pudding.
+                            <br>
+                            <br>
+                            The basic foods are either noodle or rice, where they contain 10% and 5% of protein respectively.
+                            This amount seems small and far from 100%.
+                            However, having 3 course meals per day multiple that number up to 15-30%.
+                            Moreover, vegetables and meat usually accompany the noodles and rice.
+                            Most prominent vegetable in Chinese cuisine is bok coy and pea; bok coy contain high amount of vitamin A (89%) and vitamin C (75%) and 10% of calcium and vitamin B6, while pea contains a comparable amount of vitamin C, it has lower level of vitamin A (15%) and quite high content of sugar (20%).
+                            Pork, chicken, beef meats are very good for teeth because they contain high amount of phosphorus.
+                            Every 100 grams of those meats contain 170-250 mg of phosphorus, around 30% of required amount.
+                            They are also high in protein, no one of them contains less than 50% of protein.
+                            They are also rich in vitamin B6 (20-30%), and most prominently, beef is high in B12 as well (43%).
+                            <br>
+                            <br>
+                            In general, Chinese cuisine are balanced and healthy for teeth.
+                            As the Chinese are rarely add sugar into their tea, they have low intake of sugar.
+                            Most sugar intake from sugar added to the food or commercial milk tea younger generations bought from teahouse franchise.
+                            It should be taken into notice that the recommended amount of sugar intake is 7 to 8 teaspoons a day.
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
+                <div class="inner">
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Ave. Intake</th>
+                            <th class="text-center">Gap</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Protein</td>
+                            <td>98g</td>
+                            <td class="text-center-green">+75%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>3144mg</td>
+                            <td class="text-center-green">+214%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorus</td>
+                            <td>2028mg</td>
+                            <td class="text-center-green">+108%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A</td>
+                            <td>5849ug</td>
+                            <td class="text-center-green">+987%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>3.7mg</td>
+                            <td class="text-center-green">+83%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B12</td>
+                            <td>13.3ug</td>
+                            <td class="text-center-green">+122%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>62mg</td>
+                            <td class="text-center-red">-27%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>7.8</td>
+                            <td class="text-center-green">-74%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

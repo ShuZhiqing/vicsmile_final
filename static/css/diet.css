@@ -1,0 +1,187 @@
+.nutritional-container ul li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
+    color: black;
+}
+a {
+	padding: 0;
+	margin: 0;
+	list-style-type: none;
+	text-decoration: none;
+}
+
+body {
+	background-color: #edf5f4;
+	/*
+	font-family: 'Ubuntu', sans-serif;
+	*/
+}
+
+.diet_container {
+	margin: 1em auto 3em auto;
+	width: 90%;
+	height: max-content;
+	min-height: 634px;
+	position: relative;
+}
+
+.hidden {
+	display: none;
+}
+
+.input_1{
+	/*background-color:  #69c6ba;*/
+	border: 1px solid white;
+	border-radius: 4px;
+	box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    /*padding: 1rem;*/
+}
+
+
+header,
+/*.results-container,*/
+.nutritional-container {
+	background-color:  #69c6ba;
+	border: 1px solid white;
+	border-radius: 4px;
+	box-shadow: 2px 2px 6px 0px rgba(0, 0, 0, 0.3);
+    padding: 1rem;
+}
+
+input{
+	text-align: center;
+}
+
+
+header {
+	font-size: 1.2rem;
+	/*
+	font-family: 'Montserrat', sans-serif;
+	*/
+	text-align: center;
+}
+
+input[type=text] {
+	/*width: 22.8rem;*/
+}
+
+input[type=submit] {
+	width: 6.6rem;
+	/*padding: 1rem 0;*/
+}
+
+/*.query,*/
+header,
+/*.results-container,*/
+.nutritional-container {
+	position: absolute;
+}
+
+.query {
+	left: -2.5rem;
+}
+
+header {
+	right: -2.5rem;
+	width: 30rem;
+	text-align: center;
+}
+
+.nutritional-container .instruction {
+	padding: 13rem 2rem;
+}
+
+/*.results-container,*/
+.nutritional-container {
+	height: 35rem;
+	width: 30rem;
+	top: 7.5rem;
+}
+
+.results-container{
+	left: -2.5rem;
+	overflow: scroll;
+}
+
+.results-container ul {
+	border-bottom: 1px solid black;
+	list-style-type: none;
+    padding-inline-start: 10px;
+}
+
+.results-container li {
+	border-top: 1px solid black;
+	padding: 0.5rem 1rem;
+	cursor: pointer;
+}
+
+.nutritional-container {
+	right: -2.5rem;
+	z-index: -1;
+}
+
+.nutritional-container li {
+	border-top: 1px dashed black;
+	padding: 0.5rem 0rem;
+}
+
+.nutritional-container ul {
+	border-bottom: 1px dashed black;
+	ist-style-type: none;
+    padding-inline-start: 10px;
+}
+
+.nutrition {
+	padding: 0 1rem;
+	overflow: hidden;
+}
+
+.food {
+	text-align: center;
+}
+
+.title,
+.info {
+	width: 12.9rem;
+}
+
+
+.title {
+	text-align: left;
+	float: left;
+}
+
+.info {
+	text-align: right;
+	float: right;
+}
+
+#satfat {
+	padding-left: 1.5rem;
+}
+
+.attribution {
+	width: 30rem;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.results-container ul li:hover{
+	background-color:#17a2b8 ;
+}
+
+.info ul li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none !important;
+	text-decoration: none !important;
+}
+
+.title ul li{
+	padding: 0;
+	margin: 0;
+	list-style-type: none !important;
+	text-decoration: none !important;
+}

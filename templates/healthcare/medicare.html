@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer" ></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%;height: 100%">
+    <div class="bc-icons-2 text-uppercase">
+    <ol class="breadcrumb indigo lighten-4">
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-2"><strong>Dental Healthcare</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item active">Medicare Universal Insurance</li>
+    </ol>
+    </div>
+        <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Medicare
+        </h2>
+        <br>
+        <div class="summary">
+            Medicare is the publicly funded universal health care system in Australia.
+            Operated by the Department of Human Services, Medicare is the primary funder of health care in Australia.
+            <br>
+            <br>
+            <div class="content-page-videos">
+                <div class="intrinsic-container">
+                    <iframe frameborder="0" src="https://www.youtube.com/embed/zFah_YbVLjw" target="_parent" allowfullscreen="" height="100%" width="100%" style="position: absolute; display: block; height: 100%; width: 100%;"></iframe>
+                </div>
+        </div>
+        </div>
+    <br>
+
+    <h4 class="content-page-title content-page-title-style-1">
+        Who is eligible?
+    </h4>
+        <div class="summary">
+            You can get a Medicare card if you live in Australia or on Norfolk Island and are:
+            <ul>
+                <li>an Australian citizen</li>
+                <li>a New Zealand citizen</li>
+                <li><a href="{% url 'resident' %}" target="_blank" data-toggle="tooltip" data-placement="right" title="Open in a new window">
+                    an Australian permanent resident</a></li>
+                <li>applying for permanent residency</li>
+                <li>covered by a Ministerial Order</li>
+                <li><a href="{% url 'agreement' %}" target="_blank" data-toggle="tooltip" data-placement="right" title="Open in a new window">
+                    citizen of a mutual health agreement country</a></li>
+                <li>having <a href="{% url 'refugee' %}" target="_blank" data-toggle="tooltip" data-placement="right" title="Open in a new window">
+                    refugee </a>status in Australia</li>
+            </ul>
+        </div>
+    <h4 class="content-page-title content-page-title-style-1">
+        What is covered?
+    </h4>
+        <div class="summary">
+            Medicare gives you access to:
+            <ul>
+                <li>a range of medical services for free or at a lower cost including dentist</li>
+                <li>lower cost prescriptions, and</li>
+                <li>free care as a public patient in a public hospital</li>
+            </ul>
+            You can also get a 75% rebate of the Medicare Schedule fee for services and procedures you have as a
+            <a href="{% url 'agreement' %}" target="_blank" data-toggle="tooltip" data-placement="right" title="Open in a new window">private patient. </a>
+            This can be in a public or private hospital. This doesn’t include hospital accommodation and items such as theatre fees and medicines.
+            <br>
+            You can access Medicare services if you are enrolled in Medicare. When you enrol in Medicare, you will get your own Medicare card.
+            <br>
+            Further information about eligibility and how to sign up for Medicare, visit the Australian Government Department of
+            <a href="https://www.humanservices.gov.au/individuals/enablers/who-can-get-medicare-card/39456" target="_blank"
+            data-toggle="tooltip" data-placement="right" title="Open in a new window">Human Services website.</a>
+
+        </div>
+        <br>
+
+<br>
+Resource
+<ul>
+    <li>
+        <a href="https://www.humanservices.gov.au/individuals/medicare" target="_blank"
+        data-toggle="tooltip" data-placement="right" title="Open in a new window">humanservices.gov.au/individuals/medicare</a>
+    </li>
+</ul>
+</div>
+
+
+{% endblock %}

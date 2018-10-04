@@ -1,0 +1,135 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer"></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet and
+                    Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">India</li>
+            </ol>
+        </div>
+
+        <div class="row" style="min-height: 650px">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="margin-bottom: 150px;">
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            India
+        </h2>
+                <div class="inner">
+                    Average daily Indian nutrition intake has high amount of protein, phosphorus, vitamin B6 and C.
+                    However, the foods are lack of vitamin A, B12, and calcium because many people from India are
+                    vegetarian;
+                    meanwhile the main source of vitamin A and B12 are from animal products.
+                    If you are not eligible for Medicare, by law you are required to have private health insurance while
+                    you are living in Australia.
+                    <br>
+                    <br>
+                    Food source rich in:
+                    <ul>
+                        <li>Calcium: milk, buttermilk, beans, lentils</li>
+                        <li>Vitamin A: butter, cheese, egg, sweet potato, squash, carrot</li>
+                        <li>Vitamin B6: fish, beef liver and other organ meats, potatoes and other starchy vegetables, and fruit (other than citrus)</li>
+                        <li>Vitamin B12: milk, egg</li>
+
+                    </ul>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="summary">
+                            Indians food preferences vary regionally.
+                            North Indian people prefer <i>roti, parathas,</i> and a vegetable dish accompanied by pickle and some curd with tea or coffee.
+                            People of western India prefer <i>dhokla and milk</i>; while south Indians prefer <i>idli and dosa.</i>
+                            Traditional lunch in India usually consists of a main dish of rice or whole wheat roti and typically includes vegetables.
+                            Apart from that, many households prefer having sweets after the dinner, similar like the western concept of dessert after meals.
+                            The families often gather for evening snack time, similar to tea time to talk and have tea and snacks.
+                            <br>
+                            <br>
+                            Rice and flatbreads are the most contributing calories in Indian food.
+                            However, either <i>roti, idli, dosa, dhokla, paratha,</i> and rice almost have similar amount of nutritional content.
+                            Their protein contents are in the range of 4% to 13% per serving where <i>paratha and roti</i> made of flour have the highest while <i>idli</i> has the lowest content of protein.
+                            Having 3 servings of this food means fulfilling 25% of required protein in average.
+                            To make it 100%, vegetables especially beans are the main source of protein where in 100 grams of beans it contains 42% of protein needed for average human body.
+                            A cup of milk also contributes to 16% of protein required and almost 20% of B12.
+                            <br>
+                            <br>
+                            Talking about milk, it is one of the highest source of calcium for healthy teeth, 3 cups of milk a day are more than enough to meet daily recommendation of calcium.
+                            However, if 3 cups are too much, other foods like beans and other vegetables famous in India are capable to fill the gaps.
+                            <i>Karela,</i> an Indian food made of bitter melon has high content of vitamin A, 100 grams of it contains almost 50% of vitamin A and almost 100% of vitamin C needed by our body.
+                            Bitter melon also has high amount of vitamin B6 (40%) followed by beans (25%).
+                            Indian foods themselves do not contain much sugar, almost all food source has below 10% of recommended sugar intake.
+                            The highest sugar found is in milk (43% per cup of milk).
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
+                <div class="inner">
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Ave. Intake</th>
+                            <th class="text-center">Gap</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Protein</td>
+                            <td>60.2g</td>
+                            <td class="text-center-green">+7.5%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>592mg</td>
+                            <td class="text-center-red">-41%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorus</td>
+                            <td>1421mg</td>
+                            <td class="text-center-green">+42%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A</td>
+                            <td>13.2ug</td>
+                            <td class="text-center-red">-98%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>27.mg</td>
+                            <td class="text-center-red">-55%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B12</td>
+                            <td>0.3ug</td>
+                            <td class="text-center-red">-100%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>108.7mg</td>
+                            <td class="text-center-green">+45%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>59g</td>
+                            <td class="text-center-red">+96.7%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

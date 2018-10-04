@@ -1,0 +1,128 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer"></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet and
+                    Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">Vietnam</li>
+            </ol>
+        </div>
+        <div class="row" style="min-height: 650px">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="margin-bottom: 150px;">
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Vietnam
+        </h2>
+                <div class="inner">
+                    Average daily Vietnamese nutrition intake has high to very high amount of vitamin B12, B6, phosphorus, protein, and vitamin C.
+                    This is due to the fact, people of Vietnamese background consume a lot of animal products, fruit, and vegetables mainly water spinach rich in vitamin C.
+                    A moderate amount of sugar can still be tolerable, although it may be 5 grams more than recommended daily intake.
+                    However, they need slightly more calcium to satisfy recommended daily intake.
+                    <br>
+                    <br>
+                    Food source rich in:
+                    <ul>
+                        <li>Calcium: milk, cabbage, tofu</li>
+                    </ul>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="summary">
+                            Pho is a Vietnamese meal that is becoming ever more popular across the globe.
+                            Traditionally comprised of a subtly flavoured broth, rice noodles, thinly sliced beef and a load of fresh herbs, including Thai basil.
+                            Contrary to the Western diet, breakfasts in Vietnam involves more salt than sugar.
+                            Dinner food usually includes stewed pork, steamed chicken, fried fish, or boiled or stir-fried vegetable.
+                            Steamed rice is considered inevitable in the most meal.
+                            Vietnamese usually have breakfast, lunch and dinner without tea or coffee break in between.
+                            <br>
+                            <br>
+                            Pho is a Vietnamese meal that is becoming ever more popular across the globe.
+                            Traditionally comprised of a subtly flavoured broth, rice noodles, thinly sliced beef and a load of fresh herbs,
+                            including Thai basil. Contrary to the Western diet, breakfasts in Vietnam involves more salt than sugar.
+                            Dinner food usually includes stewed pork, steamed chicken, fried fish, or boiled or stir-fried vegetable.
+                            Steamed rice is considered inevitable in the most meal.
+                            Vietnamese usually have breakfast, lunch and dinner without tea or coffee break in between.
+                            <br>
+                            <br>
+                            In Vietnam, having 2 portions of pho daily and a bowl of water spinach is enough to maintain healthy teeth.
+                            However, they are lack in calcium as there is only 7% of calcium in a serving of water spinach.
+                            In Australia, milk is very easy to find and cheap.
+                            This source of protein can be added into Vietnamese daily routine to complete the calcium needed for healthy teeth.
+                            However, a substitute of tofu is also advisable, as tofu also contains high amount of calcium.
+                            Surprisingly, Vietnamese eating habit does not include sugar that much as the people do not have a traditional afternoon tea or snack time like their British counterpart. Lower intake in sugar is very good to maintain healthy teeth.
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+            <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
+                <div class="inner">
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Ave. Intake</th>
+                            <th class="text-center">Gap</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Protein</td>
+                            <td>90.6g</td>
+                            <td class="text-center-green">+61.8%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>918mg</td>
+                            <td class="text-center-red">-18%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorus</td>
+                            <td>2426mg</td>
+                            <td class="text-center-green">+143%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A</td>
+                            <td>3066ug</td>
+                            <td class="text-center-green">+411%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>4.0mg</td>
+                            <td class="text-center-green">+100%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B12</td>
+                            <td>8.6ug</td>
+                            <td class="text-center-green">+122%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>537mg</td>
+                            <td class="text-center-green">+616%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>25g</td>
+                            <td class="text-center-green">-16.7%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

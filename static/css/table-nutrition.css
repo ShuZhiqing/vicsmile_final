@@ -1,0 +1,46 @@
+.custab{
+    border: 1px solid #ccc;
+    padding: 5px;
+    /*margin: 5% 0;*/
+    box-shadow: 3px 3px 2px #ccc;
+    transition: 0.5s;
+    }
+
+
+
+.table {
+    background-color: #f8f9fa !important;
+    width: auto !important;
+}
+
+
+.btn-danger {
+    padding: .175rem .75rem;
+    margin-top: .175rem;
+}
+
+
+.table td, .table th {
+    padding: .25rem .75rem !important;
+    vertical-align: center !important;
+}
+
+.text-center-green {
+    text-align: right !important;
+    color: rgba(17, 134, 8, 0.92);
+}
+
+.text-center-red {
+    text-align: right !important;
+    color: #992c31;
+}
+
+.clearfix { *zoom: 1;}
+.clearfix:after{ content: ""; display: block; height: 0; visibility:hidden; clear: both;}
+#main{ float: left; width: 100%;}
+#main .inner{ padding-right: 450px;}
+#aside .inner{ padding-bottom: 77%;}
+#aside{ float: left;
+    width: 380px;
+    margin-left: -380px;
+    padding-right: 60px;}

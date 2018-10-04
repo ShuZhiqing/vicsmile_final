@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer" ></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%;height: 100%">
+    <div class="bc-icons-2 text-uppercase">
+    <ol class="breadcrumb indigo lighten-4">
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-2"><strong>Dental Healthcare</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item active">Refugees and asylum seekers</li>
+    </ol>
+    </div>
+        <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Refugees and asylum seekers
+        </h2>
+   <br>
+    <h4 class="content-page-title content-page-title-style-1">
+        Access to public dental care
+    </h4>
+        <div class="summary">
+            If you are a refugee or asylum seeker you are entitled to public dental care in Victoria.
+            You are also entitled to <a href="{% url 'medicare' %}" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> Medicare</a>. Look up the link for advantage and benefit you can claim from the government.
+            <br>
+            <br>
+            Your local community<a href="{% url 'home' %}#tm-section-1" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> dental clinic</a> may sometimes cannot provide you the required service. In this situation, you may be given a voucher so that you can receive treatment from a private dentist that is valid for one to three months.
+            <br>
+            <br>
+            Call or visit the nearest<a href="{% url 'home' %}#tm-section-1" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> dental clinic </a>to you for question and appointment. If you do not speak English language very well,
+            <a href="{% url 'language' %}" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> Translation and Interpreting Service </a>may be useful for you.
+        </div>
+    <br>
+
+    <h4 class="content-page-title content-page-title-style-1">
+        Fee schedule
+    </h4>
+        <div class="summary">
+            Free of charge. There is nothing you have to pay.
+        </div>
+
+    <br>
+
+    <h4 class="content-page-title content-page-title-style-1">
+        Waiting list
+    </h4>
+        <div class="summary">
+            The general waiting list is not applied to you. You are entitled to priority access to dental care.
+            You will be offered the next available appointment for general and denture care needs.
+        </div>
+<br>
+Resource
+<ul>
+    <li>
+        <a href="https://www2.health.vic.gov.au/primary-and-community-health/dental-health" target="_blank"
+        data-toggle="tooltip" data-placement="right" title="Open in a new window">health.vic/dental health</a>
+    </li>
+</ul>
+</div>
+    <div class="summary">
+    <br>
+     <br>
+
+</div>
+
+
+
+{% endblock %}

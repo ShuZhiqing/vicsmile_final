@@ -1,0 +1,130 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer"></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet and
+                    Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">Italy</li>
+            </ol>
+        </div>
+        <div class="row" style="min-height: 650px">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="margin-bottom: 150px;">
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Italy
+        </h2>
+                <div class="inner">
+                    Average daily Italian nutrition intake has high to very high amount of sugar, calcium, vitamin B12, C, B6, and protein.
+                    This is due to the fact, people of Italian background consume a lot of animal products, fruit, and vegetables mainly rich in phosphate, protein, and vitamin B6.
+                    However, there is a need to cut sugar intake as average Italians take double of recommended sugar amount daily.
+                    The high sugar amount in Italian diet habit comes naturally from vegetables, fruit, and milk. They also need increase vitamin A intake to satisfy recommended daily value.
+                    <br>
+                    <br>
+                    Food source rich in:
+                    <ul>
+                        <li>Vitamin A: butter, cheese, egg, sweet potato, squash, carrot</li>
+                    </ul>
+                    <p>
+                        <button class="btn btn-primary" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+                            Read More
+                        </button>
+                    </p>
+                    <div class="collapse" id="collapseExample">
+                        <div class="summary">
+                            Italians start the day simply with a croissant or slice of brioche, accompanied by a cappuccino, or just an espresso.
+                            Lunch usually consists of a three-course meal: appetizer, first plate which is usually pasta, soup or rice, followed by the second plate of meat or fish dish; a leisurely affair ending with fresh fruit.
+                            Italians prefer to enjoy sweet cakes and pastries with a mid-afternoon coffee break.
+                            <br>
+                            <br>
+                            There are various Italian foods known worldwide and it hard to view the habit from certain food.
+                            However, pasta is the most basic calorie for most Italians.
+                            Pasta alone does not have much nutritional value; however, its sauce and fillings are.
+                            One of the famous sauce for pasta is tomato-based sauce.
+                            Four cups of tomato contain enough vitamin A and C for the day.
+                            Marinara sauce which includes fish and shrimp also rich in nutrition to maintain healthy teeth.
+                            300 grams of fish or prawn are enough to maintain recommended intake of protein, phosphorus, sugar, vitamin B6 and C.
+                            Pork also sometimes used in pasta, and it has comparable amount of nutrition as fish and prawn.
+                            The way they cook the pasta also enrich the nutrition, eggs and milk are not strange to be added into the pasta.
+                            Fruits they usually have after meal are also good source of vitamins and minerals good for teeth.
+                            <br>
+                            <br>
+                            There is no doubt Italian food are rich in flavour as well as nutritional value.
+                            In a daily habit, Italian has enough nutrition to maintain healthy teeth.
+                            The fact that, they may have “overdose” in a good way with beneficial nutrition to keep the teeth from decaying.
+                            However, natural sugar from milk and fruit as well as sugar added into cooking must be taken into consideration.
+                            Too much sugar is very bad and lead to teeth’s deterioration.
+                            Although, Italian food are basically good, it does not mean, one can eat all the food at once in a day.
+                            A precaution of excessive nutrition taken in a day may not be good for overall bodily health.
+                        </div>
+                    </div>
+                    <br>
+
+                    <br>
+                </div>
+            </div>
+             <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
+                <div class="inner">
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Ave. Intake</th>
+                            <th class="text-center">Gap</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Protein</td>
+                            <td>108.5g</td>
+                            <td class="text-center-green">+93.8%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>1311mg</td>
+                            <td class="text-center-green">+31%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorus</td>
+                            <td>6715mg</td>
+                            <td class="text-center-green">+572%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A</td>
+                            <td>204.6ug</td>
+                            <td class="text-center-red">-66%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>10.6mg</td>
+                            <td class="text-center-green">+428%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B12</td>
+                            <td>11.9ug</td>
+                            <td class="text-center-green">+99%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>289mg</td>
+                            <td class="text-center-green">+285%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>77g</td>
+                            <td class="text-center-red">+156.7%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,35 @@
+{% load static %}
+{% load staticfiles %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>VicSmile</title>
+    <link rel="shortcut icon" href="{% static 'img/tooth.png' %}" type="image/x-icon"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/error.css' %}"/>
+
+
+</head>
+<body>
+<div class="text-wrapper">
+{#    <div class="image">#}
+           <img src="{% static 'img/sad_tooth.png' %}">
+{#    </div>#}
+    <div class="title" data-content="404">
+        400
+    </div>
+
+    <div class="subtitle">
+        Oops, it's a bad request
+    </div>
+
+    <div class="buttons">
+        <a class="button" href={% url 'home' %} >Go to homepage</a>
+    </div>
+</div>
+</body>
+</html>

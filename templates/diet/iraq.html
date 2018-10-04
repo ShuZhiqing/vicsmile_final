@@ -1,0 +1,97 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer"></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet and
+                    Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">Iraq</li>
+            </ol>
+        </div>
+        <div class="row" style="min-height: 650px;">
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="margin-bottom: 150px;" >
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Iraq
+        </h2>
+                <div class="inner">
+                    Average daily Iraqi nutrition intake has high to very high amount of protein, vitamin B12, and phosphorus.
+                    Unlike other countries where the high amount of these nutrients comes from animal products.
+                    Iraqis get these amounts from high consumption of fruit, vegetables and grains.
+                    Since the political instability from the 1990s until now, the nutritional quality of food average Iraqis take daily has decreased overtime.
+                    They need to consume more food source that have high content of calcium, vitamin A, B12, and C.
+                    <br>
+                    <br>
+                    Food source rich in:
+                    <ul>
+                        <li>Calcium: milk, buttermilk, beans, lentils</li>
+                        <li>Vitamin A: butter, cheese, egg, sweet potato, squash, carrot</li>
+                        <li>Vitamin B12: milk, egg</li>
+                        <li>Vitamin C: broccoli, spinach, orange</li>
+                    </ul>
+                </div>
+            </div>
+           <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
+                <div class="inner">
+                    <table class="table table-striped custab">
+                        <thead>
+                        <tr>
+                            <th>Nutrient</th>
+                            <th>Ave. Intake</th>
+                            <th class="text-center">Gap</th>
+                        </tr>
+                        </thead>
+                        <tr>
+                            <td>Protein</td>
+                            <td>63.6g</td>
+                            <td class="text-center-green">+13.5%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Calcium</td>
+                            <td>753mg</td>
+                            <td class="text-center-red">-25%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Phosphorus</td>
+                            <td>9004mg</td>
+                            <td class="text-center-green">+800%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin A</td>
+                            <td>16.4ug</td>
+                            <td class="text-center-red">-97%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B6</td>
+                            <td>10.5mg</td>
+                            <td class="text-center-green">+423%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin B12</td>
+                            <td>1ug</td>
+                            <td class="text-center-red">-83%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Vitamin C</td>
+                            <td>20mg</td>
+                            <td class="text-center-red">-73%%<i class="fa fa-arrow-down"></i></td>
+                        </tr>
+                        <tr>
+                            <td>Sugar</td>
+                            <td>44.75g</td>
+                            <td class="text-center-red">+49.2%<i class="fa fa-arrow-up"></i></td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}
+

@@ -1,0 +1,118 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+    <div class="tm-container-outer" ></div>
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%;height: 100%">
+    <div class="bc-icons-2 text-uppercase">
+    <ol class="breadcrumb indigo lighten-4">
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-2"><strong>Dental Healthcare</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+        <li class="breadcrumb-item active">Permanent residents</li>
+    </ol>
+    </div>
+        <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Permanent residents
+        </h2>
+    <br>
+    <h4 class="content-page-title content-page-title-style-1">
+        Access to public dental care
+    </h4>
+
+        <div class="summary">
+            If you are a permanent visa holder you are entitled to public dental care in Victoria.
+            <br>
+            You are also entitled to<a href="{% url 'medicare' %}" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> Medicare</a>.
+            Look up the link for advantage and benefit you can claim from the government.
+            <br>
+            <br>
+            Call or visit the nearest<a href="{% url 'home' %}#tm-section-1" target="_blank"
+                data-toggle="tooltip" data-placement="right" title="Open in a new window"> dental clinic </a>to you for question and appointment..
+
+        </div>
+    <br>
+
+    <h4 class="content-page-title content-page-title-style-1">
+        Fee schedule
+    </h4>
+        <div class="summary">
+            If you are entitled to public dental care in Victoria and aged 18 and over. The following fees are charged:
+            <ul>
+                <li>$28 fee per visit, to a maximum of $112 for a general course of care </li>
+                <li>$28 flat fee for an emergency course of care </li>
+                <li>$67.50 per denture, capped at $135 for full upper and lower dentures.</li>
+            </ul>
+            If you need any <strong>specialist services</strong> at Royal Dental Hospital Melbourne you have to pay fee no more than $338 for a course of care.
+            <br>
+            <br>
+            See this table below for fee summary:
+        </div>
+        <br>
+        <table class="table table-bordered table-striped table-condensed" style="background-color: #ddd; width: auto;">
+        <thead>
+        <tr>
+          <th scope="col">Service</th>
+          <th scope="col">Fee</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <td>General care</td>
+          <td>$28 up to $112</td>
+        </tr>
+        <tr>
+          <td>Emergency care</td>
+          <td>$28</td>
+        </tr>
+        <tr>
+          <td>Denture</td>
+          <td>$67.5 up to $135</td>
+        </tr>
+         <tr>
+          <td>Specialist service</td>
+          <td>Up to $338</td>
+        </tr>
+        </tbody>
+        </table>
+    <br>
+        <div class="summary">
+            <strong>Free of charge</strong> if you are
+            <ul>
+                <li>Under 18 years old</li>
+                <li>Having financial hardship</li>
+                <li>Registered with mental health and disability services</li>
+                <li>Serviced by undergraduate students.</li>
+            </ul>
+        </div>
+        <br>
+    <h4 class="content-page-title content-page-title-style-1">
+        Waiting list
+    </h4>
+        <div class="summary">
+            You will generally be required to wait for several months if you do not fall as a person who has priority access.
+            <br>
+            <br>
+            You are entitled to priority denture care if you meet any of the following criteria:
+            <ul>
+                <li>They have no denture or natural teeth in one or both arches </li>
+                <li>They have missing front teeth, which causes aesthetic, functional or social problems that a denture could reduce </li>
+                <li>An existing denture cannot be repaired or fits so poorly that it causes tissue damage if worn </li>
+                <li>The person’s medical history suggests they need a denture </li>
+                <li>A treatment plan requires urgent extractions </li>
+                <li>Pregnant woman</li>
+            </ul>
+            If you fall under this category, you will be offered the next available appointment for general and denture care needs.
+        </div>
+<br>
+Resource
+<ul>
+    <li>
+        <a href="https://www2.health.vic.gov.au/primary-and-community-health/dental-health" target="_blank"
+        data-toggle="tooltip" data-placement="right" title="Open in a new window">health.vic/dental health</a>
+    </li>
+</ul>
+</div>
+
+
+{% endblock %}
