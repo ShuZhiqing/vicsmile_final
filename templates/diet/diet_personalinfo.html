@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+    <div class="container-new" style="height: 100%; padding: 0 10%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-2"><strong>Diet
+                    and Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">Food Facts</li>
+            </ol>
+        </div>
+        <form class="tm-search-form tm-section-pad-2" name="personalForm" id="personalForm" onchange="showFemaleInfo()">
+            <h4>Step 1:</h4>
+            <h5>Please input your information</h5>
+            <div class="form-row tm-search-form-row">
+                <div class="form-group tm-form-group tm-form-group-5">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5" id="age">
+                        <label for="ageInput">Select age range:</label>
+                        <select name="age" class="form-control tm-select" id="ageInput">
+                            <option value="0-6-months" selected>0-6 months</option>
+                            <option value="7-12-months">7-12 months</option>
+                            <option value="1-3-years">1-3 years</option>
+                            <option value="4-8-years">4-8 years</option>
+                            <option value="9-13-years">9-13 years</option>
+                            <option value="14-18-years">14-18 years</option>
+                            <option value="19-50-years">19-50 years</option>
+                        </select>
+                    </div>
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5" id="gender">
+                        <label for="genderInput">Select gender: </label>
+                        <select name="gender" class="form-control tm-select" id="genderInput">
+                            <option value="Male" selected>Male</option>
+                            <option value="Female">Female</option>
+                        </select>
+                    </div>
+                </div>
+            </div> <!-- form-row -->
+            <div class="form-row tm-search-form-row" id="femaleInfo" style="display: none">
+                <div class="form-group tm-form-group tm-form-group-5">
+                <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5">
+                    <label for="pregnantState">Are you pregnant now?</label>
+                    <select name="pregnant" class="form-control tm-select" id="pregnantState">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5">
+                    <label for="lactatingState">Are you a lactating mother?</label>
+                    <select name="lactating" class="form-control tm-select" id="lactatingState">
+                        <option value="No" selected>No</option>
+                        <option value="Yes">Yes</option>
+                    </select>
+                </div>
+                </div>
+            </div>
+            <div class="form-row tm-search-form-row" style="display: inline;">
+                <div class="form-group tm-form-group tm-form-group-5">
+                <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5">
+                    <button type="submit" class="btn btn-primary tm-btn tm-btn-search text-uppercase"
+                            id="btnSubmit"> Next
+                    </button>
+                </div>
+                </div>
+            </div>
+        </form>
+    </div>
+    <script>
+        function showFemaleInfo() {
+            var gender = document.getElementById("genderInput").value
+            var age1 = document.getElementById("ageInput").value
+            var age2 = document.getElementById("ageInput").value
+            if ( gender == "Female") {
+                if ( age1 == "14-18-years" ||  age2 == '19-50-years') {
+                    document.getElementById("femaleInfo").style.display = "inline";
+                }
+            }
+        }
+
+    </script>
+{% endblock %}
