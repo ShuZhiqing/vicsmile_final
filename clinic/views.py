@@ -2,6 +2,8 @@ from django.shortcuts import render
 from .models import Clinics, Postcode
 from math import sin, cos, sqrt, atan2, radians
 from django.forms import Form, fields
+from django.views.decorators.csrf import csrf_exempt
+
 
 # Create your views here.
 # def result(request):
@@ -18,6 +20,7 @@ from django.forms import Form, fields
 # Users can search clinics by the combination of options.
 
 
+@csrf_exempt
 def search(request):
     # retrieve the clinic info from the database
     clinic_list = Clinics.objects.all().values()
@@ -43,17 +46,32 @@ def search(request):
 
         destination1 = request.POST.get('destination', '')
 
+        lat = request.POST.get('lat', '')
+
+        lng = request.POST.get('lng', '')
+
         destination = Postcode.objects.filter(address__icontains=destination1).first()
 
         queryset_list = []
 
-        for c in clinic_list:
-            distance = round(calculateDistance(destination, c), 2)
-            c["distance"] = distance
-            if distance <= float(range):
-                if ((language in c["language"]) or (language2 in c["language"])) and (group in c["group"]):
-                    queryset_list.append(c)
-                    queryset_list = sorted(queryset_list, key=lambda query: query["waitingTime"])
+        if (lat == '') and (lng == ''):
+            for c in clinic_list:
+                distance = round(calculateDistance(c, destination.lat, destination.lng), 2)
+                c["distance"] = distance
+                if distance <= float(range):
+                    if ((language in c["language"]) or (language2 in c["language"])) and (group in c["group"]):
+                        queryset_list.append(c)
+                        queryset_list = sorted(queryset_list, key=lambda query: query["waitingTime"])
+        else:
+            latitude = lat
+            lngitude = lng
+            for c in clinic_list:
+                distance = round(calculateDistance(c, latitude, lngitude), 2)
+                c["distance"] = distance
+                if distance <= float(range):
+                    if ((language in c["language"]) or (language2 in c["language"])) and (group in c["group"]):
+                        queryset_list.append(c)
+                        queryset_list = sorted(queryset_list, key=lambda query: query["waitingTime"])
 
         # if there are no match, return the message
         if not queryset_list:
@@ -71,14 +89,14 @@ def search(request):
     })
 
 
-def calculateDistance(destination, location):
+def calculateDistance(destination, lat, lng):
     # approximate radius of earth in k
     r = 6373.0
 
-    lat1 = radians(float((destination.lat.strip())))
-    lng1 = radians(float((destination.lng.strip())))
-    lat2 = radians(float((location["lat"].strip())))
-    lng2 = radians(float((location["lng"].strip())))
+    lat1 = radians(float((destination["lat"].strip())))
+    lng1 = radians(float((destination["lng"].strip())))
+    lat2 = radians(float(lat))
+    lng2 = radians(float(lng))
 
     dlng = lng2 - lng1
     dlat = lat2 - lat1

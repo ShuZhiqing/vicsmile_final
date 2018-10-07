@@ -1,112 +1,132 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<div class="container" >
-    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
-    <div class="bc-icons-2 text-uppercase">
-    <ol class="breadcrumb indigo lighten-4">
-        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-        <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-2"><strong>Dental Healthcare</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-        <li class="breadcrumb-item active">Food Facts</li>
-    </ol>
-    </div>
+    <div class="container">
+        <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+            <div class="bc-icons-2 text-uppercase">
+                <ol class="breadcrumb indigo lighten-4">
+                    <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                            class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet
+                        and Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                    <li class="breadcrumb-item active">Food Facts</li>
+                </ol>
+            </div>
 
-<div class="diet_container">
-        <div class="row">
-            <div class="col-lg-3 col-sm-6 col-12" style="background-color: pink; height: 35rem;overflow: scroll;">
-                <div class="diet_container" style="padding-top: 15px;padding-bottom: 10px;">
-                    <form class="query" onsubmit="return false;">
-                        <input type="text" placeholder="Food Name" name="tags" autofocus required>
-                        <input style="margin-top: 10px" class="btn-primary" type="submit" value="Submit">
-                    </form>
-                    <div class="results-container">
-                        <div class="results">
-                            <div class="instruction" style="padding-top: 15px;">
-                                <p>Look for a food by putting a food name in the search bar above.</p>
-                                <p>You can refine your search by putting extra information separating your search items
-                                    with a
-                                    space</p>
-                                <p>E.g. "fried egg" would only provide results for a fried egg</p>
+            <div class="diet_container">
+                <div class="row">
+                    <div class="col-lg-3 col-sm-6 col-12"
+                         style="background-color: pink; height: 35rem;overflow: scroll;">
+                        <div class="diet_container" style="padding-top: 15px;padding-bottom: 10px;">
+                            <form class="query" onsubmit="return false;">
+                                <input type="text" placeholder="Food Name" name="tags" autofocus required>
+                                <input style="margin-top: 10px" class="btn-primary" type="submit" value="Submit">
+                            </form>
+                            <div class="results-container">
+                                <div class="results">
+                                    <div class="instruction" style="padding-top: 15px;">
+                                        <p>Look for a food by putting a food name in the search bar above.</p>
+                                        <p>You can refine your search by putting extra information separating your
+                                            search items
+                                            with a
+                                            space</p>
+                                        <p>E.g. "fried egg" would only provide results for a fried egg</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-            <div class="col-lg-3 col-sm-6 col-12" style="background-color: #c3e6cb;height: 35rem; overflow: scroll;">
-                <div class="query-container">
-                    <div class="results-container2">
-                <button class="btn-primary" id="submit" style="margin-top: 25px">Calculate</button>
-                <button class="btn-primary" id="clear" style="margin-top: 25px">Clear</button>
+                    <div class="col-lg-3 col-sm-6 col-12"
+                         style="background-color: #c3e6cb;height: 35rem; overflow: scroll;">
+                        <div class="query-container">
+                            <div class="results-container2">
+                                <button class="btn-primary" id="submit" style="margin-top: 25px">Calculate</button>
+                                <button class="btn-primary" id="clear" style="margin-top: 25px">Clear</button>
 
-                        <div class="nutritionList-container"></div>
-                        <div class="queryresults">
-                            <ul class="querylist-result" style="list-style-type: none;padding-inline-start: 10px;"></ul>
+                                <div class="nutritionList-container"></div>
+                                <div class="queryresults">
+                                    <ul class="querylist-result"
+                                        style="list-style-type: none;padding-inline-start: 10px;"></ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 col-sm-12 col-12 flex-sm-nowrap"
+                         style="background-color:lemonchiffon;height: 35rem;margin-bottom: 200px; ">
+                        {#                <div class="info column3" style="width: fit-content;padding-top: 15px;">#}
+                        {#                    <h6>Nutrition</h6>#}
+                        {#                    <ul class="Info-name" style="list-style-type: none;padding-inline-start: 10px;;">#}
+                        {#                        <li id="" style="font-weight: bolder">Sugar:</li>#}
+                        {#                        <li id="" style="font-weight: bolder">Protein: </li>#}
+                        {#                        <li id="" style="font-weight: bolder">Calcium: </li>#}
+                        {#                        <li id="" style="font-weight: bolder">Phosphorus: </li>#}
+                        {#                        <li id="" style="font-weight: bolder">Vitamin A: </li>#}
+                        {#                        <li id="" style="font-weight: bolder">Vitamin B6:</li>#}
+                        {#                        <li id="" style="font-weight: bolder">Vitamin B12:</li>#}
+                        {#                        <li id="" style="font-weight: bolder">Vitamin C:</li>#}
+                        {#                    </ul>#}
+                        {#                </div>#}
+                        <h4 style="text-align: center;padding-top: 15px">Nutrition Intake Summary</h4>
+                        <div style="width: 90%;padding-left: 15%;max-width: 350px; ">
+                            <div class="info column" style="width:80px; float:right;padding-top: 15px;">
+                                <h6>Gap with<br> standard</h6>
+                                <ul class="gInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
+                                    <li id="gsugars" style="font-weight: bolder"></li>
+                                    <li id="gprotein" style="font-weight: bolder"></li>
+                                    <li id="gcalcium" style="font-weight: bolder"></li>
+                                    <li id="gphosphorus" style="font-weight: bolder"></li>
+                                    <li id="gvitamin_A" style="font-weight: bolder"></li>
+                                    <li id="gvitamin_B6" style="font-weight: bolder"></li>
+                                    <li id="gvitamin_B12" style="font-weight: bolder"></li>
+                                    <li id="gvitamin_C" style="font-weight: bolder"></li>
+                                </ul>
+                            </div>
+                            <div class="info column2" style="width:180px; float:left;padding-top: 15px;">
+                                <h6>Approximate<br>intake</h6>
+                                <ul class="nInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
+                                    <li id="sugars" style="font-weight: bolder"></li>
+                                    <li id="protein" style="font-weight: bolder"></li>
+                                    <li id="calcium" style="font-weight: bolder"></li>
+                                    <li id="phosphorus" style="font-weight: bolder"></li>
+                                    <li id="vitamin_A" style="font-weight: bolder"></li>
+                                    <li id="vitamin_B6" style="font-weight: bolder"></li>
+                                    <li id="vitamin_B12" style="font-weight: bolder"></li>
+                                    <li id="vitamin_C" style="font-weight: bolder"></li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <div id="information"
+                             style="display: none;position: absolute;top: 320px;max-height: 210px;overflow: scroll;">
+                            Vitamin A deficiency: leads to impaired epithelial cells, which are responsible for
+                            secreting calcium, phosphate, fluoride, magnesium and carbonate ions that help form enamel
+                            and a healthy tooth. A vitamin A deficiency results in poor enamel, enamel with pits or
+                            enamel that is less dense. In severe cases the whole tooth may be rough.
+                            <br>
+                            Vitamin B6 deficiency: Sore burning mouth, sores at edge of mouth, smooth tongue.
+                            <br>
+                            Vitamin B12 deficiency: Bad breath, sores at edge of mouth, bright red tongue that may have
+                            fissures, loss of taste, dry mouth, numbness and bleeding.
+                            <br>
+                            Vitamin C deficiency: Bleeding gums, lowered immune response, infections (like yeast
+                            infection) in mouth and impaired taste.
+                            <br>
+                            Calcium deficiency: leads to weak bones and teeth. Overdose of calcium also leads to gum
+                            disease as extra calcium leads to plaque deposits on teeth.
+                            <br>
+                            Phosphorous deficiency: leads to weak bones and teeth, joint pain and loss of appetite.
+                            Overdose of phosphorous leads to calcium being drawn to blood from bones leading to weak and
+                            brittle bones.
                         </div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 col-sm-12 col-12 flex-sm-nowrap" style="background-color:lemonchiffon;height: 35rem;margin-bottom: 200px; ">
-{#                <div class="info column3" style="width: fit-content;padding-top: 15px;">#}
-{#                    <h6>Nutrition</h6>#}
-{#                    <ul class="Info-name" style="list-style-type: none;padding-inline-start: 10px;;">#}
-{#                        <li id="" style="font-weight: bolder">Sugar:</li>#}
-{#                        <li id="" style="font-weight: bolder">Protein: </li>#}
-{#                        <li id="" style="font-weight: bolder">Calcium: </li>#}
-{#                        <li id="" style="font-weight: bolder">Phosphorus: </li>#}
-{#                        <li id="" style="font-weight: bolder">Vitamin A: </li>#}
-{#                        <li id="" style="font-weight: bolder">Vitamin B6:</li>#}
-{#                        <li id="" style="font-weight: bolder">Vitamin B12:</li>#}
-{#                        <li id="" style="font-weight: bolder">Vitamin C:</li>#}
-{#                    </ul>#}
-{#                </div>#}
-                <h4 style="text-align: center;padding-top: 15px">Nutrition Intake Summary</h4>
-                <div style="width: 90%;padding-left: 15%;max-width: 350px; ">
-                <div class="info column" style="width:80px; float:right;padding-top: 15px;">
-                    <h6>Gap with<br> standard</h6>
-                    <ul class="gInfo-name"  style="list-style-type: none;padding-inline-start: 0px;">
-                        <li id="gsugars" style="font-weight: bolder"></li>
-                        <li id="gprotein" style="font-weight: bolder"></li>
-                        <li id="gcalcium" style="font-weight: bolder"></li>
-                        <li id="gphosphorus" style="font-weight: bolder"></li>
-                        <li id="gvitamin_A" style="font-weight: bolder"></li>
-                        <li id="gvitamin_B6" style="font-weight: bolder"></li>
-                        <li id="gvitamin_B12" style="font-weight: bolder"></li>
-                        <li id="gvitamin_C" style="font-weight: bolder"></li>
-                    </ul>
-                </div>
-                <div class="info column2" style="width:180px; float:left;padding-top: 15px;">
-                    <h6>Approximate<br>intake</h6>
-                    <ul class="nInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
-                        <li id="sugars" style="font-weight: bolder"></li>
-                        <li id="protein" style="font-weight: bolder"></li>
-                        <li id="calcium" style="font-weight: bolder"></li>
-                        <li id="phosphorus" style="font-weight: bolder"></li>
-                        <li id="vitamin_A" style="font-weight: bolder"></li>
-                        <li id="vitamin_B6" style="font-weight: bolder"></li>
-                        <li id="vitamin_B12" style="font-weight: bolder"></li>
-                        <li id="vitamin_C" style="font-weight: bolder"></li>
-                    </ul>
-                </div>
-            </div>
-                <br>
-                <div id="information" style="display: none;position: absolute;top: 320px;max-height: 210px;overflow: scroll;">
-                        Vitamin A deficiency: leads to impaired epithelial cells, which are responsible for secreting calcium, phosphate, fluoride, magnesium and carbonate ions that help form enamel and a healthy tooth. A vitamin A deficiency results in poor enamel, enamel with pits or enamel that is less dense. In severe cases the whole tooth may be rough.
-                        <br>
-                        Vitamin B6 deficiency: Sore burning mouth, sores at edge of mouth, smooth tongue.
-                        <br>
-                        Vitamin B12 deficiency: Bad breath, sores at edge of mouth, bright red tongue that may have fissures, loss of taste, dry mouth, numbness and bleeding.
-                        <br>
-                        Vitamin C deficiency: Bleeding gums, lowered immune response, infections (like yeast infection) in mouth and impaired taste.
-                        <br>
-                        Calcium deficiency: leads to weak bones and teeth. Overdose of calcium also leads to gum disease as extra calcium leads to plaque deposits on teeth.
-                        <br>
-                        Phosphorous deficiency: leads to weak bones and teeth, joint pain and loss of appetite. Overdose of phosphorous leads to calcium being drawn to blood from bones leading to weak and brittle bones.
-                    </div>
-            </div>
         </div>
     </div>
-</div>
-</div>
 
 {% endblock %}
+
+
+
+
 

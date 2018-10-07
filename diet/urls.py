@@ -4,6 +4,7 @@ from . import views
 
 urlpatterns = [
     path(r'diet', views.diet, name='diet'),
+    # path(r'result', views.calculate, name='result'),
     path(r'china', views.china, name='china'),
     path(r'india', views.india, name='india'),
     path(r'italy', views.italy, name='italy'),

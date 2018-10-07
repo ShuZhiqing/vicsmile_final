@@ -88,47 +88,39 @@
 
 
         <div class="container-body style-6">
-
-                <div class="bc-icons-2 text-uppercase" style="margin-left: 7.5%;margin-right: 7.5%; margin-top: 20px">
+            <div class="bc-icons-2 text-uppercase" id="replaceTop"
+                 style="margin-left: 10%;margin-right: 10%; margin-top: 20px">
                 <ol class="breadcrumb indigo lighten-4" style="padding-top: 0px">
                     <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i
                             class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item active">Search Result</li>
                 </ol>
             </div>
-        <h4></h4>
 
-
-            <div class="sf-map-container">
-            <div class="row tm-banner-row" id="tm-section-search-result">
             <form action="{% url 'result' %}" method="POST" class="tm-search-form tm-section-pad-2"
                   autocomplete="off" onsubmit="return checkLocation()" name="myForm" id="myForm">
                 {% csrf_token %}
                 <div class="form-row tm-search-form-row">
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1" style="width: 100%;">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
                         <label for="inputLocation">My Location</label>
                         <button type="button" id="locatee"
                                 style="border: none; background-color: #f5f6f6; color: #17a2b8">
                             <i class="fa fa-map-marker"></i>
                             Use Current Location
                         </button>
-                    </div>
-                </div>
-                <div class="form-row tm-search-form-row">
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1" style="width: 100%;">
-                        <div class="autocomplete" style="min-width: 320px;">
-                            <input name="destination" type="text" class="form-control"
-                                   id="inputLocation" style="box-shadow:none; text-align: left;"
-                                   placeholder="Suburb and postcode" required="True"
+                        <div class="autocomplete" style="min-width: 100%;">
+                            <input name="destination" type="text" class="form-control" id="inputLocation"
+                                   placeholder="E.g. Caulfield, 3145"
+                                   style="font-style: italic;" required="True"
                                    value="{{ input_obj.destination.value }}">
                             <span id="checkInput"></span>
                         </div>
                     </div>
-                </div>
-                <div class="form-row tm-search-form-row" >
-                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <div class="form-group tm-form-group tm-form-group-1" id="languageContainer">
+                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2" id="languageInput">
                             <label for="inputLanguage1">Preferred Language</label>
-                            <select name="language" class="form-control tm-select" id="inputLanguage1">
+                            <select name="language" class="form-control tm-select" id="inputLanguage1"
+                                    style="min-width: 155px">
                                 <option value="English" selected>English</option>
                                 <option value="Arabic">Arabic</option>
                                 <option value="French">French</option>
@@ -151,9 +143,10 @@
                                 <option value="Vietnamese">Vietnamese</option>
                             </select>
                         </div>
-                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                        <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2" id="languageInput">
                             <label for="inputLanguage2">Second Language</label>
-                            <select name="language2" class="form-control tm-select" id="inputLanguage2">
+                            <select name="language2" class="form-control tm-select" id="inputLanguage2"
+                                    style="min-width: 155px">
                                 <option value="English" selected>English</option>
                                 <option value="Arabic">Arabic</option>
                                 <option value="French">French</option>
@@ -177,12 +170,13 @@
                             </select>
                         </div>
                     </div>
-
-                <div class="form-row tm-search-form-row" >
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1" >
+                </div> <!-- form-row -->
+                <div class="form-row tm-search-form-row">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
                         <label for="inputDistance">Distance</label>
-                        <select name="distance" class="form-control tm-select" id="inputDistance">
-                            <option value="5" selected>Within 5km</option>
+                        <select name="distance" class="form-control tm-select" id="inputDistance"
+                                method="GET">
+                            <option value="5">Within 5km</option>
                             <option value="10">Within 10km</option>
                             <option value="20">Within 20km</option>
                             <option value="30">Within 30km</option>
@@ -190,7 +184,7 @@
                             <option value="50">Within 50km</option>
                         </select>
                     </div>
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-3">
                         <label for="inputGroup">Group</label>
                         <select name="group" class="form-control tm-select" id="inputGroup">
                             <option value="All ages" selected>All ages</option>
@@ -200,58 +194,61 @@
                             </option>
                         </select>
                     </div>
-                </div>
-                <div class="form-row tm-search-form-row">
-                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-1">
-                        <label for="btnSubmit"></label>
-                        <button type="submit"
-                                class="btn btn-primary tm-btn tm-btn-search text-uppercase"
+                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-2">
+                        <label for="btnSubmit">&nbsp</label>
+                        <button type="submit" class="btn btn-primary tm-btn tm-btn-search text-uppercase"
                                 id="btnSubmit">Search Clinic
                         </button>
                     </div>
                 </div>
+                 <input id="lat" name="lat" type="text" style="display:none">
+                 <input id="lng" name="lng" type="text" style="display:none">
             </form>
-        </div> <!-- row -->
-            <div class="results-sort" style="flex-direction: column">
-                <ul id="nav" >
-                <button type="button" class="btn btn-default" onclick="switchIcon()" style="min-width: 80px; margin-bottom: 10px;"">
-                    <span id="desc" class="pull-left" style="display: inline-block;"><i
-                            class="fa fa-sort-amount-asc"></i>Distance</span>
-                    <span id="asc" class="pull-left" style="display:none;"> <i
-                            class="fa fa-sort-amount-desc"></i>Distance</span>
-                </button>
-                <button type="button" class="btn btn-default" onclick="switchIcon2()" style="min-width: 80px;margin-bottom: 10px;">
+
+            <div class="sf-map-container" id="111" style="margin-bottom: 130px">
+                <div class="results-sort" style="flex-direction: column">
+                    <ul id="nav">
+                        <button type="button" class="btn btn-default" onclick="switchIcon()"
+                                style="min-width: 80px; margin-bottom: 10px;">
+                        <span id="desc" class="pull-left" style="display: inline-block;"><i
+                                class="fa fa-sort-amount-asc"></i>Distance</span>
+                        <span id="asc" class="pull-left" style="display:none;"> <i
+                                class="fa fa-sort-amount-desc"></i>Distance</span>
+                        </button>
+                        <button type="button" class="btn btn-default" onclick="switchIcon2()"
+                                style="min-width: 80px;margin-bottom: 10px;">
                     <span id="wdesc" class="pull-left" style="display: inline-block;"><i
                             class="fa fa-sort-amount-asc"></i>Waiting Time</span>
-                    <span id="wasc" class="pull-left" style="display:none;"> <i
-                            class="fa fa-sort-amount-desc"></i>Waiting Time</span>
-                </button>
-            </ul>
-                <div class="sf-map-sidebar">
-                    {% if not error_msg %}
-                        <div class="sf-map-results">
-                            {% for query in queryset_list %}
-                                <div id="{{ query.name }}" class="sf-map-result-container" style="border: none;">
-                                    <span id="{{ query.address }}" class="sf-map-result-label"></span>
-                                    <span class="sf-map-result-title">{{ query.name }}</span><br>
-                                    <span class="sf-map-result-waitinglist" style="font-weight: bolder;color: #17a2b8;">Approximate Waiting Time: {{ query.waitingTime }} months</span><br>
-                                    <label style="display:none">{{ query.waitingTime }} </label>
-                                    <span class="sf-map-result-addr"> <i class="fa fa-map-marker"
-                                                                         style="color: #818182"></i> {{ query.address }}</span><br>
-                                    <span class="sf-map-result-language"> <i class="fa fa-language"
-                                                                             style="color: #818182;font-size: inherit;" ></i> {{ query.language }}</span><br>
-                                    <span class="sf-map-result-group"><i class="fa fa-group"
-                                                                         style="color: #818182"></i> {{ query.group }}</span><br>
-                                    <span class="sf-map-result-phone"><i class="fa fa-phone"
-                                                                         style="color: #818182"></i> {{ query.phone }}</span><br>
+                            <span id="wasc" class="pull-left" style="display:none;"> <i
+                                    class="fa fa-sort-amount-desc"></i>Waiting Time</span>
+                        </button>
+                    </ul>
+                    <div class="sf-map-sidebar">
+                        {% if not error_msg %}
+                            <div class="sf-map-results">
+                                {% for query in queryset_list %}
+                                    <div id="{{ query.name }}" class="sf-map-result-container" style="border: none;">
+                                        <span id="{{ query.address }}" class="sf-map-result-label"></span>
+                                        <span class="sf-map-result-title">{{ query.name }}</span><br>
+                                        <span class="sf-map-result-waitinglist"
+                                              style="font-weight: bolder;color: #17a2b8;">Approximate Waiting Time: {{ query.waitingTime }} months</span><br>
+                                        <label style="display:none">{{ query.waitingTime }} </label>
+                                        <span class="sf-map-result-addr"> <i class="fa fa-map-marker"
+                                                                             style="color: #818182"></i> {{ query.address }}</span><br>
+                                        <span class="sf-map-result-language"> <i class="fa fa-language"
+                                                                                 style="color: #818182;font-size: inherit;"></i> {{ query.language }}</span><br>
+                                        <span class="sf-map-result-group"><i class="fa fa-group"
+                                                                             style="color: #818182"></i> {{ query.group }}</span><br>
+                                        <span class="sf-map-result-phone"><i class="fa fa-phone"
+                                                                             style="color: #818182"></i> {{ query.phone }}</span><br>
 
-                                    <span class="sf-map-result-phone">Distance: {{ query.distance }} Km</span><br>
-                                    <input type="text" value="{{ query.distance }}" style="display:none">
-                                    <span id="{{ query.id }}"></span>
-                                    <i class="fa fa-calendar-o" style="color: #818182"
-                                       data-html="true"
-                                       data-toggle="tooltip"
-                                       title="<strong>Opening Hour</strong><br>
+                                        <span class="sf-map-result-phone">Distance: {{ query.distance }} Km</span><br>
+                                        <input type="text" value="{{ query.distance }}" style="display:none">
+                                        <span id="{{ query.id }}"></span>
+                                        <i class="fa fa-calendar-o" style="color: #818182; padding: 10px 10px;"
+                                           data-html="true"
+                                           data-toggle="tooltip"
+                                           title="<strong>Opening Hour</strong><br>
                                        Monday: {{ query.monday }} <br>
                                        Tuesday: {{ query.tuesday }}<br>
                                        Wednesday: {{ query.wednesday }}<br>
@@ -259,45 +256,47 @@
                                        Friday: {{ query.friday }}<br>
                                        Saturday: {{ query.saturday }}<br>
                                        Sunday: {{ query.sunday }}"
-                                       data-placement="right"></i><br>
-                                    <button type="button" class="btn btn-info"
-                                            onclick="window.open('{{ query.website }}')">
-                                        <i class="fa fa-globe" style="font-size: inherit" title="Website"></i> Read More
-                                    </button>
-                                    <button type="button" class="btn btn-info"
-                                            onclick="window.open('http://maps.google.com/maps?saddr=' + clocation() + '&daddr={{ query.lat }},{{ query.lng }}&hl=en&dirflg=r')">
-                                        <i class="fa fa-arrow-circle-right" title="direction"></i> Go there
-                                    </button>
-                                </div>
-                            {% endfor %}
-                        </div>
+                                           data-placement="right"></i><br>
+                                        <button type="button" class="btn btn-info"
+                                                onclick="window.open('{{ query.website }}')">
+                                            <i class="fa fa-globe" style="font-size: inherit" title="Website"></i>
+                                            Website
+                                        </button>
+                                        <button type="button" class="btn btn-info"
+                                                onclick="window.open('http://maps.google.com/maps?saddr=' + clocation() + '&daddr={{ query.lat }},{{ query.lng }}&hl=en&dirflg=r')">
+                                            <i class="fa fa-arrow-circle-right" title="direction"></i> Go there
+                                        </button>
+                                    </div>
+                                {% endfor %}
+                            </div>
 
-                    {% elif error_msg %}
-                        <h3>Sorry, we could not found your preferred results. But we list 10 nearest clinics for
-                            you.</h3>
-                        <div class="sf-map-results">
-                            {% for query in clinic_list|slice:"10" %}
-                                <div id="{{ query.name }}" class="sf-map-result-container" style="border: none;">
-                                    <span id="{{ query.address }}" class="sf-map-result-label"></span>
-                                    <span class="sf-map-result-title">{{ query.name }}</span><br>
-                                    <span class="sf-map-result-waitinglist" style="font-weight: bolder;color: #17a2b8;">Approximate Waiting Time: {{ query.waitingTime }} months</span><br>
-                                    <label style="display:none">{{ query.waitingTime }} </label>
-                                    <span class="sf-map-result-addr"> <i class="fa fa-map-marker"
-                                                                         style="color: #818182"></i> {{ query.address }}</span><br>
-                                    <span class="sf-map-result-language"> <i class="fa fa-language"
-                                                                             style="color: #818182;font-size: inherit;"></i> {{ query.language }}</span><br>
-                                    <span class="sf-map-result-group"><i class="fa fa-group"
-                                                                         style="color: #818182"></i> {{ query.group }}</span><br>
-                                    <span class="sf-map-result-phone"><i class="fa fa-phone"
-                                                                         style="color: #818182"></i> {{ query.phone }}</span><br>
+                        {% elif error_msg %}
+                            <h3>Sorry, we could not found your preferred results. But we list 10 nearest clinics for
+                                you.</h3>
+                            <div class="sf-map-results">
+                                {% for query in clinic_list|slice:"10" %}
+                                    <div id="{{ query.name }}" class="sf-map-result-container" style="border: none;">
+                                        <span id="{{ query.address }}" class="sf-map-result-label"></span>
+                                        <span class="sf-map-result-title">{{ query.name }}</span><br>
+                                        <span class="sf-map-result-waitinglist"
+                                              style="font-weight: bolder;color: #17a2b8;">Approximate Waiting Time: {{ query.waitingTime }} months</span><br>
+                                        <label style="display:none">{{ query.waitingTime }} </label>
+                                        <span class="sf-map-result-addr"> <i class="fa fa-map-marker"
+                                                                             style="color: #818182"></i> {{ query.address }}</span><br>
+                                        <span class="sf-map-result-language"> <i class="fa fa-language"
+                                                                                 style="color: #818182;font-size: inherit;"></i> {{ query.language }}</span><br>
+                                        <span class="sf-map-result-group"><i class="fa fa-group"
+                                                                             style="color: #818182"></i> {{ query.group }}</span><br>
+                                        <span class="sf-map-result-phone"><i class="fa fa-phone"
+                                                                             style="color: #818182"></i> {{ query.phone }}</span><br>
 
-                                    <span class="sf-map-result-phone">Distance: {{ query.distance }} Km</span><br>
-                                    <input type="text" value="{{ query.distance }}" style="display:none">
-                                    <span id="{{ query.id }}"></span>
-                                    <i class="fa fa-calendar-o" style="color: #818182"
-                                       data-html="true"
-                                       data-toggle="tooltip"
-                                       title="<strong>Opening Hour</strong><br>
+                                        <span class="sf-map-result-phone">Distance: {{ query.distance }} Km</span><br>
+                                        <input type="text" value="{{ query.distance }}" style="display:none">
+                                        <span id="{{ query.id }}"></span>
+                                        <i class="fa fa-calendar-o" style="color: #818182;padding: 10px 10px;"
+                                           data-html="true"
+                                           data-toggle="tooltip"
+                                           title="<strong>Opening Hour</strong><br>
                                        Monday: {{ query.monday }} <br>
                                        Tuesday: {{ query.tuesday }}<br>
                                        Wednesday: {{ query.wednesday }}<br>
@@ -305,21 +304,22 @@
                                        Friday: {{ query.friday }}<br>
                                        Saturday: {{ query.saturday }}<br>
                                        Sunday: {{ query.sunday }}"
-                                       data-placement="right"></i><br>
-                                    <button type="button" class="btn btn-info"
-                                            onclick="window.open('{{ query.website }}')">
-                                        <i class="fa fa-globe" id="globe-img" style="font-size: inherit;" title="Website"></i> Read More
-                                    </button>
-                                    <button type="button" class="btn btn-info"
-                                            onclick="window.open('http://maps.google.com/maps?saddr=' + clocation() + '&daddr={{ query.lat }},{{ query.lng }}&hl=en&dirflg=r')">
-                                        <i class="fa fa-arrow-circle-right" title="direction"></i> Go there
-                                    </button>
-                                </div>
-                            {% endfor %}
-                        </div>
-                    {% endif %}
+                                           data-placement="right"></i><br>
+                                        <button typsolid rgb(105, 198, 186)e="button" class="btn btn-info"
+                                                onclick="window.open('{{ query.website }}')">
+                                            <i class="fa fa-globe" id="globe-img" style="font-size: inherit; "
+                                               title="Website"></i> Website
+                                        </button>
+                                        <button type="button" class="btn btn-info"
+                                                onclick="window.open('http://maps.google.com/maps?saddr=' + clocation() + '&daddr={{ query.lat }},{{ query.lng }}&hl=en&dirflg=r')">
+                                            <i class="fa fa-arrow-circle-right" title="direction"></i> Go there
+                                        </button>
+                                    </div>
+                                {% endfor %}
+                            </div>
+                        {% endif %}
+                    </div>
                 </div>
-            </div>
 
                 <div class="sf-map-view" id="map">
                     <div style="width: 100%;height: 100%; margin: 0px; padding: 0px; position: relative;"></div>
@@ -395,6 +395,7 @@
                                         map.setZoom(15);
                                         document.getElementById("{{ query.name }}").style.border = 'solid #69c6ba';
                                         document.getElementById("{{ query.name }}").scrollIntoView();
+                                        document.getElementById("111").style.marginTop = '100px'
                                         clicked = true;
                                         pMarkerId = "{{ query.name }}";
                                         var latLng = marker.getPosition(); // returns LatLng object
@@ -422,6 +423,7 @@
                                     );
                                     infoWindow.open(map, markers[{{ forloop.counter }}-1]);
                                     document.getElementById("{{ query.name }}").style.border = 'solid #69c6ba';
+                                    document.getElementById("111").style.marginTop = '100px'
                                     clicked = true;
                                     pMarkerId = "{{ query.name }}";
                                     var latLng = markers[{{ forloop.counter }}-1].getPosition(); // returns LatLng object
@@ -467,6 +469,7 @@
                                         map.setZoom(15);
                                         document.getElementById("{{ query.name }}").style.border = 'solid #69c6ba';
                                         document.getElementById("{{ query.name }}").scrollIntoView();
+                                        document.getElementById("111").style.marginTop = '100px'
                                         clicked = true;
                                         pMarkerId = "{{ query.name }}";
                                         var latLng = marker.getPosition(); // returns LatLng object
@@ -494,6 +497,8 @@
                                     );
                                     infoWindow.open(map, markers[{{ forloop.counter }}-1]);
                                     document.getElementById("{{ query.name }}").style.border = 'solid #69c6ba';
+                                    document.getElementById("111").style.marginTop = '100px';
+
                                     clicked = true;
                                     pMarkerId = "{{ query.name }}";
                                     var latLng = markers[{{ forloop.counter }}-1].getPosition(); // returns LatLng object
@@ -514,7 +519,8 @@
                                 elements[i].style.border = '#fff';
                             }
                             {#let test = document.getElementsByClassName('sf-map-result-container');#}
-                            document.getElementById(elements[0].id).scrollIntoView();
+                            document.getElementById("map").scrollIntoView();
+                            document.getElementById("111").style.marginTop = '0px'
                         });
 
 
@@ -581,6 +587,8 @@
                             var geocoder = new google.maps.Geocoder;
                             var latitude = position.coords.latitude;		    // set latitude variable
                             var longitude = position.coords.longitude;			// set longitude variable
+                            $("#lat").val(latitude)
+                            $("#lng").val(longitude)
                             /*var latLongResponse = latitude + ',' + longitude;*/
                             /*var latlngStr = latLongResponse.split(',', 2);*/
                             var latlng = {lat: parseFloat(latitude), lng: parseFloat(longitude)};
@@ -1044,13 +1052,47 @@
                         window.oninput = function checkInput() {
                             document.getElementById("checkInput").innerHTML = "";
                         }
+
+                        function mobileScroll() {
+                            if (navigator.userAgent.match(/(iPad|iPod|iPhone|Android)/i) != null) {
+                                document.getElementById("map").scrollIntoView();
+                            }
+                        }
+
+                        function searchAgain() {
+                            document.getElementById("replaceTop").scrollIntoView();
+                        }
+
+                        mobileScroll();
                     </script>
 
                 </div>
+</div>
 
+        <div class="row" style="display: none;" id="searchButton" >
+                        <button id="searchAgain" class="btn btn-primary tm-btn text-uppercase"
+                                 onclick="searchAgain()">
+                            Search Again
+                        </button>
             </div>
 
         </div>
+        <script>
+            function showSearchButton() {
+                if (document.getElementById("searchButton").style.display == "none") {
+                    if (navigator.userAgent.match(/(iPad|iPod|iPhone|Android)/i) != null) {
+                        document.getElementById("searchButton").style.display = "inline";
+                        document.getElementById('111').style.marginBottom = '10px';
+                    }
+                }
+
+            }
+
+            showSearchButton();
+        </script>
+
+
+
     {% endautoescape %}
 
 {% endblock %}

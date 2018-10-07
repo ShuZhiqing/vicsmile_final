@@ -66,36 +66,35 @@
                                 <a class="nav-link" href="{% url 'home' %}#top">Public Dental Service Finder</a>
                             </li>
                             <li class="test navbar-nav ">
-                                <a class="nav-link" style="padding-right: 0px;" href="{% url 'home' %}#tm-section-2">Dental
-                                    Healthcare</a>
-                            </li>
-                            <li class="test navbar-nav ">
-                                <a class="nav-link" href="#" ><i class="fa fa-caret-down"></i></a>
+                                <a class="nav-link" href="{% url 'home' %}#tm-section-2">Dental Healthcare
+                                <i class="fa fa-caret-down"></i></a>
                                 <ul id="dropdown-Menu">
-                                    <li><a href="{% url 'refugee' %}" class="external">Refugees and asylum seekers</a>
-                                    </li>
+                                    <li><a href="{% url 'home' %}#tm-section-2" class="viewAll">View All</a></li>
+                                    <li class="dropdown-divider viewAll"></li>
+                                    <li><a href="{% url 'refugee' %}" class="external">Refugees and asylum seekers</a></li>
                                     <li><a href="{% url 'student' %}" class="external">International students </a></li>
                                     <li><a href="{% url 'worker' %}" class="external">Foreign workers</a></li>
                                     <li><a href="{% url 'resident' %}" class="external">Permanent residents</a></li>
+                                    <li class="dropdown-divider"></li>
                                     <li><a href="{% url 'medicare' %}" class="external">Medicare</a></li>
                                     <li><a href="{% url 'insurance' %}" class="external">Private Insurance</a></li>
                                     <li><a href="{% url 'language' %}" class="external">Language Service</a></li>
-                                    <li><a href="{% url 'agreement' %}" class="external">Reciprocal Health Agreement</a>
-                                    </li>
+                                    <li><a href="{% url 'agreement' %}" class="external">Reciprocal Health Agreement</a></li>
                                 </ul>
                             </li>
                             <li class="test navbar-nav ">
-                                <a class="nav-link" style="padding-right: 0px;" href="{% url 'home' %}#tm-section-3">Diet and Habits</a>
-                            </li>
-                            <li class="test navbar-nav ">
-                                <a class="nav-link" href="#" ><i class="fa fa-caret-down"></i></a>
+                                <a class="nav-link" href="{% url 'home' %}#tm-section-3">Diet and Habits
+                                <i class="fa fa-caret-down"></i></a>
                                 <ul id="dropdown-Menu">
+                                    <li><a href="{% url 'home' %}#tm-section-3" class="viewAll">View All</a></li>
+                                    <li class="dropdown-divider viewAll"></li>
                                     <li><a href="{% url 'china' %}" class="external">Chinese Diet and Habits</a></li>
                                     <li><a href="{% url 'india' %}" class="external">Indian Diet and Habits</a></li>
                                     <li><a href="{% url 'italy' %}" class="external">Italian Diet and Habits</a></li>
                                     <li><a href="{% url 'iraq' %}" class="external">Iraqi Diet and Habits</a></li>
                                     <li><a href="{% url 'vietnam' %}" class="external">Vietnamese Diet and Habits</a></li>
-                                    <li><a href="{% url 'diet' %}" class="external">Nutrient Intake Calculator</a></li>
+                                    <li class="dropdown-divider"></li>
+                                    <li><a href="{% url 'diet' %}" class="external">Nutrients Intake Calculator</a></li>
                                 </ul>
                             </li>
                         </ul>
@@ -104,6 +103,7 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </div> <!-- .tm-top-bar -->{#    <div class="section" id="section0">#}
+<div id="google_translate_element_sub" class="dropdown"></div>
 {% block content %}
 
 {% endblock %}
@@ -219,7 +219,7 @@ $(function () {
 
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE
 
-        }, 'google_translate_element');
+        }, 'google_translate_element_sub');
     }
 
     $(".dropdowns").dropdowns();

@@ -32,8 +32,8 @@
 
 /* second level navigation colors */
 .nav li li a {
-    background: #eeeeee;
-    border-bottom: 1px solid #c0c0c0;
+    background-color: #f6f6f6;
+    /*border-bottom: 1px solid #c0c0c0;*/
 }
 
 /* third level navigation colors */

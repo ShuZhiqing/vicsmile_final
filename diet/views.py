@@ -2,8 +2,11 @@ from django.shortcuts import render
 
 
 # Create your views here.
+# def diet(request):
+#     return render(request, 'diet/diet.html', context={})
+
+
 def diet(request):
-    # return render(request, 'diet/diet.html', context={})
     return render(request, 'diet/diet_new.html', context={})
 
 def china(request):

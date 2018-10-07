@@ -2,7 +2,7 @@
 	$.fn.dropdowns = function (options) {
 		
 		var defaults = {
-			toggleWidth: 993
+			toggleWidth: 992
 		}
 		
 		var options = $.extend(defaults, options);
@@ -20,6 +20,8 @@
 		var adjustMenu = function() {
 			if (ww < options.toggleWidth) {
 				$(".toggleMenu").css("display", "inline-block");
+				$(".viewAll").show();
+				// $(".viewAll").css("display", "inline-block");
 				if (!$(".toggleMenu").hasClass("active")) {
 					$(".nav").hide();
 				} else {
@@ -34,6 +36,8 @@
 			} 
 			else if (ww >= options.toggleWidth) {
 				$(".toggleMenu").css("display", "none");
+				// $(".viewAll").css("display", "none");
+				$(".viewAll").hide()
 				$(".nav").show();
 				$(".nav li").removeClass("hover");
 				$(".nav li a").unbind('click');

@@ -44,3 +44,30 @@
     width: 380px;
     margin-left: -380px;
     padding-right: 60px;}
+
+
+
+@media (min-width: 900px) and (max-width: 1200px) {
+.table {
+        font-size: 15px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+.table {
+        font-size: 13px;
+    }
+}
+
+@media (min-width: 419px) and (max-width: 900px) {
+.table{
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 419px) {
+
+ .table {
+        font-size: 12px;
+    }
+}
