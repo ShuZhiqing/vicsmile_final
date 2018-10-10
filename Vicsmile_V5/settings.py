@@ -131,7 +131,7 @@ USE_TZ = True
 STATIC_ROOT = 'opt/vicsmile/static'
 # STATIC_ROOT = 'static'
 
-STATIC_URL = '/static/'
+# STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
     os.path.join(BASE_DIR, "static"),
