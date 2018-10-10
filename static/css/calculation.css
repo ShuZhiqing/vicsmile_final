@@ -1,0 +1,87 @@
+.Delete_button {
+    background: url(../img/remove.svg) transparent no-repeat;
+    height: 15px;
+    width: 15px;
+    border: none;
+    border-radius: 100%;
+    margin-right: 10px;
+}
+
+.Delete_button:hover {
+    cursor: pointer;
+
+}
+
+.calculate_div1 {
+    background-color: #69c6ba4f;
+    height: 38rem;
+    overflow: scroll;
+}
+
+.calculate_div2 {
+    background-color: #c3e6cb;
+    height: 38rem;
+    overflow: scroll;
+
+}
+
+.calculate_div3 {
+    background-color: #17a2b88a;
+    height: 38rem;
+    margin-bottom: 200px;
+
+}
+
+/*.query {*/
+    /*margin-left: 15px;*/
+    /*margin-right: 15px;*/
+/*}*/
+
+/*.results-container{*/
+    /*margin-left: 15px;*/
+    /*margin-right: 15px;*/
+/*}*/
+
+.queryresults {
+    margin-top: 15px;
+}
+
+.queryresults  li{
+    margin-bottom: 10px;
+    color: #1e65b1;
+    font-weight: 400;
+}
+
+#information{
+    margin-top: 25px;
+    padding: 0 5px;
+    display: none;
+    position: absolute;
+    top: 320px;
+    max-height: 250px;
+    overflow: scroll;
+}
+
+@media screen and (min-width: 1121px) {
+    .summary-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media (min-width: 991px) and (max-width: 1121px) {
+    .summary-title {
+        font-size: 1.05rem;
+    }
+}
+
+@media (min-width: 349px) and (max-width: 991px) {
+    .summary-title {
+        font-size: 1.25rem;
+    }
+}
+
+@media screen and (max-width: 349px) {
+    .summary-title {
+        font-size: 1.05rem;
+    }
+}
