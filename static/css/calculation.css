@@ -28,7 +28,7 @@
 .calculate_div3 {
     background-color: #17a2b88a;
     height: 38rem;
-    margin-bottom: 200px;
+    /*margin-bottom: 200px;*/
 
 }
 
@@ -62,25 +62,25 @@
     overflow: scroll;
 }
 
-@media screen and (min-width: 1121px) {
+@media screen and (min-width: 1167px) {
     .summary-title {
         font-size: 1.25rem;
     }
 }
 
-@media (min-width: 991px) and (max-width: 1121px) {
+@media (min-width: 991px) and (max-width: 1167px) {
     .summary-title {
         font-size: 1.05rem;
     }
 }
 
-@media (min-width: 349px) and (max-width: 991px) {
+@media (min-width: 364px) and (max-width: 991px) {
     .summary-title {
         font-size: 1.25rem;
     }
 }
 
-@media screen and (max-width: 349px) {
+@media screen and (max-width: 364px) {
     .summary-title {
         font-size: 1.05rem;
     }
