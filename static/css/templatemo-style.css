@@ -2444,8 +2444,8 @@ i.tooltip-inner {
 }
 
 .results-container li {
-    list-style-type: none;
-    padding-inline-start: 10px;
+    list-style-type: none !important;
+    padding-inline-start: 5px;
 }
 
 .diets-box {
