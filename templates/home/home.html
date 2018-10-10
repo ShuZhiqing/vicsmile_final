@@ -111,7 +111,7 @@
     <div class="tm-page-wrap mx-auto">
         <section class="tm-banner">
             <div class="tm-container-outer tm-banner-bg" id="tm-section-1">
-                <div class="container" style="padding-right: 15px;padding-left: 15px;">
+                <div class="container" >
                     <div class="row tm-banner-row tm-banner-row-header">
                         <div class="col-xs-12">
                             <div class="tm-banner-header">
@@ -144,7 +144,7 @@
                                         <input name="destination" type="text" class="form-control" id="inputLocation"
                                                placeholder="E.g. Caulfield, 3145" style="font-style: italic;"
                                                required="True">
-                                        <span id="checkInput"></span>
+                                        <div id="checkInput"></div>
                                     </div>
                                 </div>
                                 {#                                    <div class="form-group tm-form-group tm-form-group-pad tm-form-group-4">#}
@@ -234,8 +234,8 @@
                                             id="btnSubmit">Search Clinic
                                     </button>
                                 </div>
-                                <input id="lat" name="lat" type="text" style="display:none">
-                                <input id="lng" name="lng" type="text" style="display:none">
+{#                                <input id="lat" name="lat" type="text" style="display:none">#}
+{#                                <input id="lng" name="lng" type="text" style="display:none">#}
                             </div>
                         </form>
 
@@ -251,18 +251,18 @@
                 <div class="col-xs-12 mx-auto tm-about-text-wrap text-center">
                     <h2 class="text-uppercase mb-4">Your <strong>Dental Health</strong> is our priority</h2>
                     <p class="mb-4" style="text-align: left">
-                        <strong>42%</strong> of all children aged 5–10 have experienced tooth decay in their primary
-                        teeth (‘baby teeth’)
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">42%</strong> of all children aged 5–10 have experienced tooth decay in their primary
+                        teeth (‘baby teeth’).
                         <br>
-                        <strong>1 in 4</strong> children aged 5–10 have untreated tooth decay in their primary teeth
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">1 in 4</strong> children aged 5–10 have untreated tooth decay in their primary teeth.
                         <br>
-                        <strong>1 in 25</strong> Australians aged 15 and over have no natural teeth
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">1 in 25</strong> Australians aged 15 and over have no natural teeth.
                         <br>
-                        <strong>3 in 10</strong> adults aged 25–44 have untreated tooth decay
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">3 in 10</strong> adults aged 25–44 have untreated tooth decay.
                         <br>
-                        <strong>3 in 10</strong> people delayed or avoided a visit to the dentist due to cost
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">3 in 10</strong> people delayed or avoided a visit to the dentist due to cost.
                         <br>
-                        <strong>1 in 2</strong> people aged 5 and over have some level of private health insurance cover
+                        <strong style="color: #17a2b8;font-size: 19px; font-weight: 600;">1 in 2</strong> people aged 5 and over have some level of private health insurance cover.
                         for dental expense
                     </p>
                 </div>
@@ -273,7 +273,7 @@
 
 
 <div class="tm-container-outer" id="tm-section-2">
-    <h1 class="text-uppercase mb-4 "
+    <h1 class="text-uppercase mb-4 tm-banner-title"
         style="text-align:center; padding-top: 70px;adding-left: 10px; padding-right: 10px;"> Dental Healthcare <strong>In
         Australia</strong></h1>
     <main class="cards">
@@ -363,9 +363,9 @@
     </main>
 </div>
 <div class="tm-container-outer" id="tm-section-3">
-    <h1 class="text-uppercase mb-4 " style="text-align:center;padding-top: 70px;"> Diet and Habits for <strong>Dental
+    <h1 class="text-uppercase mb-4 tm-banner-title" style="text-align:center;padding-top: 70px;"> Diet and Habits for <strong>Dental
         Health</strong></h1>
-    <div class="container-fluid tm-container-outer" id="tm-section-3" style="padding: 1rem 10% 8.5rem 10%;">
+    <div class="container-fluid tm-container-outer" id="tm-section-3" style="padding: 1rem 10% 1rem 10%;">
         {#    <div class="row" >#}
         {#        <div class="intro-box" >#}
         {#        <div class="col-12 col-sm-4 col-lg-4" id="pic" style="text-align: center;">#}
@@ -605,13 +605,13 @@
             </a>
         </div>
         <div class="col-xs-12" id="gohere" style="text-align: center;">
-            <a href="javascript:void(0)" class="tm-down-arrow-link"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
+            <a href="javascript:void(0)" class="tm-down-arrow-link1"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
             {#        <a href="{% url 'diet' %}" class="button">Diet</a>#}
         </div>
         <span></span>
         <div id="countries-all">
             <div class="h3 text-center" style="width: 100%; margin-top: 30px;">
-                <h4>Dental health is also affected by Diet and Habits in different cultures</h4>
+                <h4>Dental health is also affected by Diet and Habits in different cultures.</h4>
             </div>
             <div class="media-container-row" id="countries" style="padding: 20px 0px;">
                 <div class="col-6 col-sm-6 col-lg-4 diets-box" style="text-align:center;padding: 10px;">
@@ -640,39 +640,20 @@
                     <h4 class="countryName" style="color: #17a2b8;padding-top: 5px">Vietnam</h4>
                 </div>
             </div>
-            <div class="h4 text-center" style="width: 100%; margin-top: 30px;">
-                <h4>Nutrients Intake Calculator</h4>
+            <div class="col-xs-12" id="gothere" style="text-align: center;">
+            <a href="javascript:void(0)" class="tm-down-arrow-link2"><i class="fa fa-2x fa-angle-down tm-down-arrow"></i></a>
             </div>
-
+            <div class="h4 text-center" style="width: 100%; margin-top: 30px; font-size: 1.5rem; ">
+                <h4>Want to know how much nutrients you intake today that are good for you dental health?
+                    <br>You can use our <a href="{% url 'diet' %}" ><strong style="color: #17a2b8">Nutrients Intake Calculator.</strong></a></h4>
+                <p style="font-size: 20px;color: #17a2b8; margin-top: 20px;">Click the Calculator to start!</p></a>
+            </div>
             <div class="col-xs-12" style="text-align: center; ">
-            <a href="{% url 'diet' %}" ><img src="{% static 'img/calculator.png' %}" style="width: 20%"></a>
+            <a href="{% url 'diet' %}" ><img class="calculator" src="{% static 'img/calcul.png' %}" style="width: 180px;border-radius: 12px; margin-top: 10px;"></a>
         </div>
         </div>
-
     </div>
-
 </div>
-
-<footer class="footer-basic-centered">
-    <p class="footer-links">
-        <a href="{% url 'home' %}#top">Home</a>
-        ·
-        <a href="{% url 'about' %}">About</a>
-        ·
-        <a href="{% url 'faq' %}">Faq</a>
-        ·
-        <a href="{% url 'terms' %}">Terms and Conditions</a>
-        ·
-        <a href="{% url 'privacy' %}">Privacy Policy</a>
-        ·
-        <a href="{% url 'copyright' %}">Copyright</a>
-        ·
-        <a><i class="fa fa-phone"></i> Emergency: 1300 360 054</a>
-    </p>
-    <p class="footer-company-name">Copyright © <span class="tm-current-year">2018</span> VicSmile. Designed by QuadCore
-    </p>
-</footer>
-
 
 <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" style="display: none;">
     <div class="modal-dialog modal-lg" role="document">
@@ -756,10 +737,13 @@
             }
         });
 
-        $('.tm-down-arrow-link').click(function () {
+        $('.tm-down-arrow-link1').click(function () {
             $.scrollTo('#gohere', 300, {easing: 'linear'});
         });
 
+        $('.tm-down-arrow-link2').click(function () {
+            $.scrollTo('#gothere', 300, {easing: 'linear'});
+        });
 
         // Update nav links on scroll
         $('#tm-top-bar').singlePageNav({
@@ -768,6 +752,9 @@
             filter: ':not(.external)'
         });
 
+        {#$(".footer-basic-centered").show();#}
+        {#$("footer").css('bottom','0px');#}
+        {##}
 
         // Close navbar after clicked
         {#$('.nav-link').click(function () {#}
@@ -990,7 +977,7 @@
 
         if (!(address.getAddress().includes(location.toUpperCase()))) {
             check = false;
-            document.getElementById("checkInput").innerHTML = "Wrong address, the accepted input should be 'Suburb, Postcode'";
+            document.getElementById("checkInput").innerHTML = 'The acceptable input should be Suburb, Postcode';
             document.getElementById("checkInput").style.color = "red";
         } else {
             check = true;
@@ -1083,6 +1070,27 @@
         }
     });
 
+
+
 </script>
 </body>
+<footer class="footer-basic-centered">
+    <p class="footer-links">
+        <a href="{% url 'home' %}#top">Home</a>
+        ·
+        <a href="{% url 'about' %}">About</a>
+        ·
+        <a href="{% url 'faq' %}">Faq</a>
+        ·
+        <a href="{% url 'terms' %}">Terms and Conditions</a>
+        ·
+        <a href="{% url 'privacy' %}">Privacy Policy</a>
+        ·
+        <a href="{% url 'copyright' %}">Copyright</a>
+        ·
+        <a><i class="fa fa-phone"></i> Emergency: 1300 360 054</a>
+    </p>
+    <p class="footer-company-name">Copyright © <span class="tm-current-year">2018</span> VicSmile. Designed by QuadCore
+    </p>
+</footer>
 </html>

@@ -29,8 +29,9 @@
     <link rel="stylesheet" type="text/css" href="{% static 'css/datepicker.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick.css' %}"/>
     <link rel="stylesheet" type="text/css" href="{% static 'slick/slick-theme.css' %}"/>
-{#    <link rel="stylesheet" type="text/css" href="{% static 'css/diet.css' %}"/>#}
+    {#    <link rel="stylesheet" type="text/css" href="{% static 'css/diet.css' %}"/>#}
     <link rel="stylesheet" type="text/css" href="{% static 'css/table-nutrition.css' %}"/>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/calculation.css' %}"/>
     <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
     <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
     <!--[if lt IE 9]>
@@ -40,6 +41,7 @@
           <![endif]-->
 </head>
 
+<body>
 <button class="myBtn" onclick="topFunction()" id="myBtn" title="Go to top"><i class="fa fa-arrow-up"></i></button>
 <div id="google_translate_element" class="dropdown"></div>
 {#<div id="google_translate_element"></div>#}
@@ -67,11 +69,12 @@
                             </li>
                             <li class="test navbar-nav ">
                                 <a class="nav-link" href="{% url 'home' %}#tm-section-2">Dental Healthcare
-                                <i class="fa fa-caret-down"></i></a>
+                                    <i class="fa fa-caret-down"></i></a>
                                 <ul id="dropdown-Menu">
                                     <li><a href="{% url 'home' %}#tm-section-2" class="viewAll">View All</a></li>
                                     <li class="dropdown-divider viewAll"></li>
-                                    <li><a href="{% url 'refugee' %}" class="external">Refugees and asylum seekers</a></li>
+                                    <li><a href="{% url 'refugee' %}" class="external">Refugees and asylum seekers</a>
+                                    </li>
                                     <li><a href="{% url 'student' %}" class="external">International students </a></li>
                                     <li><a href="{% url 'worker' %}" class="external">Foreign workers</a></li>
                                     <li><a href="{% url 'resident' %}" class="external">Permanent residents</a></li>
@@ -79,12 +82,13 @@
                                     <li><a href="{% url 'medicare' %}" class="external">Medicare</a></li>
                                     <li><a href="{% url 'insurance' %}" class="external">Private Insurance</a></li>
                                     <li><a href="{% url 'language' %}" class="external">Language Service</a></li>
-                                    <li><a href="{% url 'agreement' %}" class="external">Reciprocal Health Agreement</a></li>
+                                    <li><a href="{% url 'agreement' %}" class="external">Reciprocal Health Agreement</a>
+                                    </li>
                                 </ul>
                             </li>
                             <li class="test navbar-nav ">
                                 <a class="nav-link" href="{% url 'home' %}#tm-section-3">Diet and Habits
-                                <i class="fa fa-caret-down"></i></a>
+                                    <i class="fa fa-caret-down"></i></a>
                                 <ul id="dropdown-Menu">
                                     <li><a href="{% url 'home' %}#tm-section-3" class="viewAll">View All</a></li>
                                     <li class="dropdown-divider viewAll"></li>
@@ -92,7 +96,8 @@
                                     <li><a href="{% url 'india' %}" class="external">Indian Diet and Habits</a></li>
                                     <li><a href="{% url 'italy' %}" class="external">Italian Diet and Habits</a></li>
                                     <li><a href="{% url 'iraq' %}" class="external">Iraqi Diet and Habits</a></li>
-                                    <li><a href="{% url 'vietnam' %}" class="external">Vietnamese Diet and Habits</a></li>
+                                    <li><a href="{% url 'vietnam' %}" class="external">Vietnamese Diet and Habits</a>
+                                    </li>
                                     <li class="dropdown-divider"></li>
                                     <li><a href="{% url 'diet' %}" class="external">Nutrients Intake Calculator</a></li>
                                 </ul>
@@ -103,11 +108,13 @@
             </div> <!-- row -->
         </div> <!-- container -->
     </div> <!-- .tm-top-bar -->{#    <div class="section" id="section0">#}
-<div id="google_translate_element_sub" class="dropdown"></div>
+    <div id="google_translate_element_sub" class="dropdown"></div>
+</div>
 {% block content %}
 
 {% endblock %}
-<footer class="footer-basic-centered">
+
+<footer class="footer-basic-centered" id="footer-wrapper">
     <p class="footer-links">
         <a href="{% url 'home' %}#top">Home</a>
         ·
@@ -123,10 +130,9 @@
         ·
         <a><i class="fa fa-phone"></i> Emergency: 1300 360 054</a>
     </p>
-    <p class="footer-company-name">Copyright © <span class="tm-current-year">2018</span> VicSmile. Designed by QuadCore</p>
+    <p class="footer-company-name">Copyright © <span class="tm-current-year">2018</span> VicSmile. Designed by QuadCore
+    </p>
 </footer>
-</div>
-
 <!-- load JS files -->
 <script src="{% static 'js/jquery-1.11.3.min.js' %}"></script>
 <!-- jQuery (https://jquery.com/download/) -->
@@ -147,17 +153,17 @@
 <script type="text/javascript" src="{% static 'js/diet.js' %}"></script>
 
 <script>
-$(function () {
-    $(window).on("scroll", function () {
-        if ($(window).scrollTop() > 100) {
-            // language=JQuery-CSS
-            $('.tm-top-bar').addClass("active");
-        } else {
-            $('.tm-top-bar').removeClass("active");
-        }
-    });
+    $(function () {
+        $(window).on("scroll", function () {
+            if ($(window).scrollTop() > 100) {
+                // language=JQuery-CSS
+                $('.tm-top-bar').addClass("active");
+            } else {
+                $('.tm-top-bar').removeClass("active");
+            }
+        });
 
-    window.onresize = hideMainMenu;
+        window.onresize = hideMainMenu;
 
         function hideMainMenu() {
             var winW = $(window).width();
@@ -175,14 +181,22 @@ $(function () {
             }
         });
 
-})
-        {#// Update nav links on scroll#}
-        {#$('#tm-top-bar').singlePageNav({#}
-        {#    currentClass: 'active',#}
-        {#    offset: 60,});#}
+    })
 
     $(document).ready(function () {
-        $('[data-toggle="tooltip"]').tooltip();
+        if ($(document.body).height() < $(window).height()) {
+            $('#footer-wrapper').attr('style', ' bottom: 0px;');
+        }
+    })
+
+
+    {#// Update nav links on scroll#}
+    {#$('#tm-top-bar').singlePageNav({#}
+    {#    currentClass: 'active',#}
+    {#    offset: 60,});#}
+
+    $(document).ready(function () {
+        $('[data-toggle="tooltip"]').tooltip({trigger: 'hover'});
     });
 
     $(document).ready(function () {
@@ -234,9 +248,23 @@ $(function () {
         });
     }
 
-
+    $(document).ready(function () {
+        $("#readMore").click(function () {
+            var elem = $("#readMore").text();
+            if (elem == "Read More") {
+                //Stuff to do when btn is in the read more state
+                $("#readMore").text("Read Less");
+                {#$("#text").slideDown();#}
+            } else {
+                //Stuff to do when btn is in the read less state
+                $("#readMore").text("Read More");
+                {#$("#text").slideUp();#}
+            }
+        });
+    });
 
 </script>
-
 </body>
+
 </html>
+

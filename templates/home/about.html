@@ -1,4 +1,7 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
+
 
 {% block content %}
     <div class="tm-container-outer"></div>
@@ -25,30 +28,30 @@
             can search public dental clinics, foods, and view informative materials and learn more about dental health.
             <br>
             <br>
+        </div>
+        <div class="team">
+            <h4 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
+            Our people
+            </h4>
+            <div class="team-picture" style="width: 100%">
+                <img src="{% static 'img/team.png' %}" style="max-width: 100%">
+            </div>
+            <br>
+            <div class="team-text">
             Members of Team QuadCore:
             <ul>
-                <li>Changze Chen (Claude)</li>
+                <li>Changze Chen (Claude): Developer</li>
                 <li><a href="https://www.linkedin.com/in/vigneshdhanapal/" target="_blank" data-toggle="tooltip"
-                       data-placement="right" title="Open in a new window">Vignesh Dhanapal</a></li>
+                       data-placement="right" title="Open in a new window">Vignesh Dhanapal: Business Analyst</a></li>
                 <li><a href="https://www.linkedin.com/in/mravp/" target="_blank" data-toggle="tooltip"
-                       data-placement="right" title="Open in a new window">Mahaztra Putra (Rafa)</a></li>
-                <li>Zhiqing Shu (Yolanda)</li>
+                       data-placement="right" title="Open in a new window">Mahaztra Putra (Rafa): Data Analyst</a></li>
+                <li><a href="https://www.linkedin.com/in/zhiqing-shu-90591616a/" target="_blank" data-toggle="tooltip"
+                       data-placement="right" title="Open in a new window">Zhiqing Shu (Yolanda): Developer</a></li>
             </ul>
-        </div>
-        <div class="summary">
-            <h4> </h4>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
-            <br>
+            </div>
             <br>
         </div>
     </div>
-
-
+    <div class="summary-end-footer"></div>
 
 {% endblock %}

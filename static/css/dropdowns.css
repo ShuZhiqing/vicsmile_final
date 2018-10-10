@@ -6,6 +6,7 @@
     display:  none;
 }
 .nav {
+    display: none;
     list-style: none;
      *zoom: 1;
 }

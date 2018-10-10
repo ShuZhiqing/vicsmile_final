@@ -47,15 +47,11 @@
 
 
 
-@media (min-width: 900px) and (max-width: 1200px) {
-.table {
-        font-size: 15px;
-    }
-}
 
 @media screen and (min-width: 900px) {
 .table {
-        font-size: 13px;
+    font-size: 15px;
+    min-width: 350px;
     }
 }
 
@@ -65,7 +61,7 @@
     }
 }
 
-@media screen and (max-width: 419px) {
+@media (max-width: 419px) {
 
  .table {
         font-size: 12px;

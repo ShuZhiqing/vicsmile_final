@@ -14,25 +14,27 @@
                 <li class="breadcrumb-item active">Food Facts</li>
             </ol>
         </div>
-        <form class="tm-search-form tm-section-pad-2" name="personalForm" id="personalForm" onchange="showFemaleInfo()">
-            <h4>Step 1:</h4>
-            <h5>Please input your information</h5>
+        <form class="tm-search-form tm-section-pad-2" name="personalForm" id="personalForm" onchange="showFemaleInfo()"
+        action="{% url 'dietresult' %}" method="POST">
+            <h4 style="color: #1b8c9e;">Step 1:</h4>
+            <h5 style="color: #1b8c9e;">Please input your information to get more accurate results</h5>
             <div class="form-row tm-search-form-row">
                 <div class="form-group tm-form-group tm-form-group-5">
                     <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5" id="age">
-                        <label for="ageInput">Select age range:</label>
+                        <label for="ageInput">Select your age range:</label>
                         <select name="age" class="form-control tm-select" id="ageInput">
-                            <option value="0-6-months" selected>0-6 months</option>
-                            <option value="7-12-months">7-12 months</option>
-                            <option value="1-3-years">1-3 years</option>
-                            <option value="4-8-years">4-8 years</option>
-                            <option value="9-13-years">9-13 years</option>
-                            <option value="14-18-years">14-18 years</option>
-                            <option value="19-50-years">19-50 years</option>
+                            <option value="0-6 months" selected>0-6 months</option>
+                            <option value="7-12 months">7-12 months</option>
+                            <option value="1-3 years">1-3 years</option>
+                            <option value="4-8 years">4-8 years</option>
+                            <option value="9-13 years">9-13 years</option>
+                            <option value="14-18 years">14-18 years</option>
+                            <option value="19-50 years">19-50 years</option>
+                            <option value="51+ years">51+ years</option>
                         </select>
                     </div>
                     <div class="form-group tm-form-group tm-form-group-pad tm-form-group-5" id="gender">
-                        <label for="genderInput">Select gender: </label>
+                        <label for="genderInput">Select your gender: </label>
                         <select name="gender" class="form-control tm-select" id="genderInput">
                             <option value="Male" selected>Male</option>
                             <option value="Female">Female</option>
@@ -72,10 +74,9 @@
     <script>
         function showFemaleInfo() {
             var gender = document.getElementById("genderInput").value
-            var age1 = document.getElementById("ageInput").value
-            var age2 = document.getElementById("ageInput").value
+            var age = document.getElementById("ageInput").value
             if ( gender == "Female") {
-                if ( age1 == "14-18-years" ||  age2 == '19-50-years') {
+                if ( age == "14-18 years" ||  age == "19-50 years") {
                     document.getElementById("femaleInfo").style.display = "inline";
                 }
             }

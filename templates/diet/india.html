@@ -1,4 +1,6 @@
 {% extends 'base.html' %}
+{% load static %}
+{% load staticfiles %}
 
 {% block content %}
 
@@ -16,10 +18,9 @@
         </div>
 
         <div class="row" style="min-height: 650px">
-            <div class="col-lg-7 col-md-12 col-sm-12 col-12">
-                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">
-            India
-        </h2>
+            <div class="col-lg-7 col-md-12 col-sm-12 col-12" style="padding-right: 5%;">
+                <h2 class="content-page-title content-page-title-style-1 subtitle" style="color: #17a2b8">India
+                    <span style="display:inline-block;"><img src="{% static 'img/india-flat.png' %}" style="width: 60px;"></span></h2>
                 <div class="inner">
                     Average daily Indian nutrition intake has high amount of protein, phosphorus, vitamin B6 and C.
                     However, the foods are lack of vitamin A, B12, and calcium because many people from India are
@@ -38,10 +39,8 @@
 
                     </ul>
                     <p>
-                        <button class="btn btn-primary" type="button" data-toggle="collapse"
-                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-                            Read More
-                        </button>
+                        <button class="btn btn-primary" id="readMore" type="button" data-toggle="collapse"
+                                data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">Read More</button>
                     </p>
                     <div class="collapse" id="collapseExample">
                         <div class="summary-diet" >
@@ -76,9 +75,9 @@
             </div>
             <div class="col-lg-5 col-md-12 col-sm-12 col-12" style="margin-bottom: 200px;">
                 <div class="inner">
-                    <h5>Indian daily intake of nutrients that are good <br>
-                        for dental health (per person per day). </h5>
-                    <p>* More is not always better. <br>
+                    <p style="color: #17a2b8; font-size: 18px; font-weight: 400; padding-right: 10%" >Indian daily intake of <strong> nutrients that are
+                        good for dental health </strong>(per person per day). </p>
+                    <p style="font-style: italic;font-size: 14px;">* More is not always better. <br>
                         Excess of some nutrients may also lead to some health issues. <br>
                         For detail information, please consult your doctor.
                     </p>
@@ -189,6 +188,10 @@
                             <td class="text-center-red">+96.7%<i class="fa fa-arrow-up"></i></td>
                         </tr>
                     </table>
+                    <button type="submit" class="btn btn-primary tm-btn-calculate"
+                    onclick="location.href= '{% url 'diet' %}'" style="margin-top: 10px;background: #17a2b8;">
+                        Calculate your daily nutrients intake <i class="fa fa-arrow-circle-right"></i>
+                    </button>
                 </div>
             </div>
         </div>

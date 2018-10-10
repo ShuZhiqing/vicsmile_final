@@ -1,132 +1,339 @@
 {% extends 'base.html' %}
 
+{% load static %}
+
 {% block content %}
-    <div class="container">
-        <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
-            <div class="bc-icons-2 text-uppercase">
-                <ol class="breadcrumb indigo lighten-4">
-                    <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i
-                            class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet
-                        and Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
-                    <li class="breadcrumb-item active">Food Facts</li>
-                </ol>
-            </div>
-
-            <div class="diet_container">
-                <div class="row">
-                    <div class="col-lg-3 col-sm-6 col-12"
-                         style="background-color: pink; height: 35rem;overflow: scroll;">
-                        <div class="diet_container" style="padding-top: 15px;padding-bottom: 10px;">
-                            <form class="query" onsubmit="return false;">
-                                <input type="text" placeholder="Food Name" name="tags" autofocus required>
-                                <input style="margin-top: 10px" class="btn-primary" type="submit" value="Submit">
-                            </form>
-                            <div class="results-container">
-                                <div class="results">
-                                    <div class="instruction" style="padding-top: 15px;">
-                                        <p>Look for a food by putting a food name in the search bar above.</p>
-                                        <p>You can refine your search by putting extra information separating your
-                                            search items
-                                            with a
-                                            space</p>
-                                        <p>E.g. "fried egg" would only provide results for a fried egg</p>
-                                    </div>
+    <body>
+    {#    <div class="container">#}
+    <div class="wrapper" style="height: 100%;padding-left: 0rem;padding-right: 0rem; width:80%">
+        <div class="bc-icons-2 text-uppercase">
+            <ol class="breadcrumb indigo lighten-4">
+                <li class="breadcrumb-item"><a class="black-text"
+                                               href="{% url 'home' %}#top"><strong>Home</strong></a><i
+                        class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#tm-section-3"><strong>Diet
+                    and Habits</strong></a><i class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
+                <li class="breadcrumb-item active">Food Facts</li>
+            </ol>
+        </div>
+        <div class="diet_container">
+            <div class="row">
+                <div class="col-lg-4 col-sm-6 col-12 calculate_div1">
+                    <div class="diet_container " style="padding-top: 15px;padding-bottom: 10px;">
+                        <form class="query" onsubmit="return false;">
+                            <input type="text" placeholder="Food Name" name="tags" autofocus required>
+                            <input style="margin-top: 10px" class="btn-primary" type="submit" value="Search">
+                        </form>
+                        <div class="results-container">
+                            <div class="results">
+                                <div class="instruction" style="padding-top: 15px;">
+                                    <p>Look for a food by putting a food name in the search bar above.</p>
+                                    <p>You can refine your search by putting extra information separating your
+                                        search items
+                                        with a
+                                        space</p>
+                                    <p>E.g. "fried egg" would only provide results for a fried egg</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                    <div class="col-lg-3 col-sm-6 col-12"
-                         style="background-color: #c3e6cb;height: 35rem; overflow: scroll;">
-                        <div class="query-container">
-                            <div class="results-container2">
-                                <button class="btn-primary" id="submit" style="margin-top: 25px">Calculate</button>
-                                <button class="btn-primary" id="clear" style="margin-top: 25px">Clear</button>
+                </div>
+                <div class="col-lg-4 col-sm-6 col-12 calculate_div2">
+                    <div class="query-container ">
+                        <div class="results-container2">
+                            <button class="btn-primary" id="calculate" onclick="calculate()"
+                                    style="margin-top: 25px">
+                                Calculate
+                            </button>
+                            <button class="btn-primary" id="clear" style="margin-top: 25px">Clear all</button>
+                            {#                                <button class="btn-primary" style="margin-top: 25px" onclick="test(calculation)">test</button>#}
 
-                                <div class="nutritionList-container"></div>
-                                <div class="queryresults">
-                                    <ul class="querylist-result"
-                                        style="list-style-type: none;padding-inline-start: 10px;"></ul>
-                                </div>
+                            <div class="nutritionList-container"></div>
+                            <div class="queryresults">
+                                <ol class="querylist-result"
+                                    style="list-style-type: none;padding-inline-start: 10px;"></ol>
                             </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-12 col-12 flex-sm-nowrap  calculate_div3">
+                    <p class="summary-title" style="text-align: center;padding-top: 15px;font-weight: 600">Nutrition
+                        Intake Summary
+                        <span><img src="{% static 'img/summary.svg' %}" style="width: 30px;"></span></p>
+                    <div class="summary-columns" style="max-width: 250px; min-width: 240px; margin: 0 auto;">
+                        <div class="info column" style="width:70px; float:right;">
+                            <h6>Gap with<br> standard</h6>
+                            <ul class="gInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
+                                <li id="gsugars" style="font-weight: bolder"></li>
+                                <li id="gprotein" style="font-weight: bolder"></li>
+                                <li id="gcalcium" style="font-weight: bolder"></li>
+                                <li id="gphosphorus" style="font-weight: bolder"></li>
+                                <li id="gvitamin_A" style="font-weight: bolder"></li>
+                                <li id="gvitamin_B6" style="font-weight: bolder"></li>
+                                <li id="gvitamin_B12" style="font-weight: bolder"></li>
+                                <li id="gvitamin_C" style="font-weight: bolder"></li>
+                                <li id="gvitamin_D" style="font-weight: bolder"></li>
+                            </ul>
+                        </div>
+                        <div class="info column2" style="width:170px; float:left;">
+                            <h6>Approximate<br>intake</h6>
+                            <ul class="nInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
+                                <li id="sugars" style="font-weight: bolder"></li>
+                                <li id="protein" style="font-weight: bolder"></li>
+                                <li id="calcium" style="font-weight: bolder"></li>
+                                <li id="phosphorus" style="font-weight: bolder"></li>
+                                <li id="vitamin_A" style="font-weight: bolder"></li>
+                                <li id="vitamin_B6" style="font-weight: bolder"></li>
+                                <li id="vitamin_B12" style="font-weight: bolder"></li>
+                                <li id="vitamin_C" style="font-weight: bolder"></li>
+                                <li id="vitamin_D" style="font-weight: bolder"></li>
+                            </ul>
                         </div>
                     </div>
-                    <div class="col-lg-6 col-sm-12 col-12 flex-sm-nowrap"
-                         style="background-color:lemonchiffon;height: 35rem;margin-bottom: 200px; ">
-                        {#                <div class="info column3" style="width: fit-content;padding-top: 15px;">#}
-                        {#                    <h6>Nutrition</h6>#}
-                        {#                    <ul class="Info-name" style="list-style-type: none;padding-inline-start: 10px;;">#}
-                        {#                        <li id="" style="font-weight: bolder">Sugar:</li>#}
-                        {#                        <li id="" style="font-weight: bolder">Protein: </li>#}
-                        {#                        <li id="" style="font-weight: bolder">Calcium: </li>#}
-                        {#                        <li id="" style="font-weight: bolder">Phosphorus: </li>#}
-                        {#                        <li id="" style="font-weight: bolder">Vitamin A: </li>#}
-                        {#                        <li id="" style="font-weight: bolder">Vitamin B6:</li>#}
-                        {#                        <li id="" style="font-weight: bolder">Vitamin B12:</li>#}
-                        {#                        <li id="" style="font-weight: bolder">Vitamin C:</li>#}
-                        {#                    </ul>#}
-                        {#                </div>#}
-                        <h4 style="text-align: center;padding-top: 15px">Nutrition Intake Summary</h4>
-                        <div style="width: 90%;padding-left: 15%;max-width: 350px; ">
-                            <div class="info column" style="width:80px; float:right;padding-top: 15px;">
-                                <h6>Gap with<br> standard</h6>
-                                <ul class="gInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
-                                    <li id="gsugars" style="font-weight: bolder"></li>
-                                    <li id="gprotein" style="font-weight: bolder"></li>
-                                    <li id="gcalcium" style="font-weight: bolder"></li>
-                                    <li id="gphosphorus" style="font-weight: bolder"></li>
-                                    <li id="gvitamin_A" style="font-weight: bolder"></li>
-                                    <li id="gvitamin_B6" style="font-weight: bolder"></li>
-                                    <li id="gvitamin_B12" style="font-weight: bolder"></li>
-                                    <li id="gvitamin_C" style="font-weight: bolder"></li>
-                                </ul>
-                            </div>
-                            <div class="info column2" style="width:180px; float:left;padding-top: 15px;">
-                                <h6>Approximate<br>intake</h6>
-                                <ul class="nInfo-name" style="list-style-type: none;padding-inline-start: 0px;">
-                                    <li id="sugars" style="font-weight: bolder"></li>
-                                    <li id="protein" style="font-weight: bolder"></li>
-                                    <li id="calcium" style="font-weight: bolder"></li>
-                                    <li id="phosphorus" style="font-weight: bolder"></li>
-                                    <li id="vitamin_A" style="font-weight: bolder"></li>
-                                    <li id="vitamin_B6" style="font-weight: bolder"></li>
-                                    <li id="vitamin_B12" style="font-weight: bolder"></li>
-                                    <li id="vitamin_C" style="font-weight: bolder"></li>
-                                </ul>
-                            </div>
-                        </div>
+                    <br>
+                    <div id="information">
+                        <strong>Vitamin A deficiency:</strong> results in poor enamel, enamel with pits or
+                        enamel that is less dense. In severe cases the whole tooth may be rough.
                         <br>
-                        <div id="information"
-                             style="display: none;position: absolute;top: 320px;max-height: 210px;overflow: scroll;">
-                            Vitamin A deficiency: leads to impaired epithelial cells, which are responsible for
-                            secreting calcium, phosphate, fluoride, magnesium and carbonate ions that help form enamel
-                            and a healthy tooth. A vitamin A deficiency results in poor enamel, enamel with pits or
-                            enamel that is less dense. In severe cases the whole tooth may be rough.
-                            <br>
-                            Vitamin B6 deficiency: Sore burning mouth, sores at edge of mouth, smooth tongue.
-                            <br>
-                            Vitamin B12 deficiency: Bad breath, sores at edge of mouth, bright red tongue that may have
-                            fissures, loss of taste, dry mouth, numbness and bleeding.
-                            <br>
-                            Vitamin C deficiency: Bleeding gums, lowered immune response, infections (like yeast
-                            infection) in mouth and impaired taste.
-                            <br>
-                            Calcium deficiency: leads to weak bones and teeth. Overdose of calcium also leads to gum
-                            disease as extra calcium leads to plaque deposits on teeth.
-                            <br>
-                            Phosphorous deficiency: leads to weak bones and teeth, joint pain and loss of appetite.
-                            Overdose of phosphorous leads to calcium being drawn to blood from bones leading to weak and
-                            brittle bones.
-                        </div>
+                        <strong>Vitamin B6 deficiency:</strong> Sore burning mouth, sores at edge of mouth, smooth tongue.
+                        <br>
+                        <strong>Vitamin B12 deficiency:</strong> Bad breath, sores at edge of mouth, bright red tongue that may have
+                        fissures, loss of taste, dry mouth, numbness and bleeding.
+                        <br>
+                        <strong>Vitamin C deficiency:</strong> Bleeding gums, lowered immune response, infections (like yeast
+                        infection) in mouth and impaired taste.
+                        <br>
+                        <strong>Calcium deficiency:</strong> Leads to weak bones and teeth.
+                        <br>
+                        <strong>Phosphorous deficiency:</strong> Leads to weak bones and teeth, joint pain and loss of appetite.
                     </div>
                 </div>
             </div>
         </div>
-    </div>
 
+
+            {#        </div>#}
+            <script type="text/javascript">
+
+                var protein = 0
+                var sugars = 0
+                var calcium = 0
+                var phosphorus = 0
+                var vitamin_A = 0
+                var vitamin_B6 = 0
+                var vitamin_B12 = 0
+                var vitamin_C = 0
+                var vitamin_D = 0
+
+                var Amount
+                var calculation = []
+                var count = 0
+
+
+                function calculate() {
+
+                    if (parseFloat($("input[name='amount']").val()) >= 0) {
+                        if ($(".querylist-result li")) {
+
+                            Amount = $("input[name='amount']")
+
+                            for (var i = 0; i < Amount.length; i++) {
+                                console.log(Amount[i].value)
+                            }
+                            console.log(Amount)
+                            console.log(resultList)
+                            console.log(resultList.length)
+
+                            for (var i = 0; i < resultList.length; i++) {
+                                var validation = 0
+                                if (resultList[i][203] == null) {
+                                    protein += validation
+                                } else {
+                                    protein += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][203].value)
+                                }
+                                if (resultList[i][269] == null) {
+                                    sugars += validation
+                                } else {
+                                    sugars += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][269].value)
+                                }
+                                if (resultList[i][301] == null) {
+                                    calcium += validation
+                                } else {
+                                    calcium += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][301].value)
+                                }
+                                if (resultList[i][305] == null) {
+                                    phosphorus += validation
+                                } else {
+                                    phosphorus += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][305].value)
+                                }
+                                if (resultList[i][318] == null) {
+                                    vitamin_A += validation
+                                } else {
+                                    vitamin_A += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][318].value)
+                                }
+                                if (resultList[i][415] == null) {
+                                    vitamin_B6 += validation
+                                } else {
+                                    vitamin_B6 += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][415].value)
+                                }
+                                if (resultList[i][418] == null) {
+                                    vitamin_B12 += validation
+                                } else {
+                                    vitamin_B12 += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][418].value)
+                                }
+                                if (resultList[i][401] == null) {
+                                    vitamin_C += validation
+                                } else {
+                                    vitamin_C += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][401].value)
+                                }
+                                if (resultList[i][328] == null) {
+                                    vitamin_D += validation
+                                } else {
+                                    vitamin_D += parseFloat(Amount.eq(i).val() / 100) * parseFloat(resultList[i][401].value)
+                                }
+                            }
+
+                            calculation = []
+
+                            calculation.push(sugars)
+                            calculation.push(protein)
+                            calculation.push(calcium)
+                            calculation.push(phosphorus)
+                            calculation.push(vitamin_A)
+                            calculation.push(vitamin_B6)
+                            calculation.push(vitamin_B12)
+                            calculation.push(vitamin_C)
+                            calculation.push(vitamin_D)
+
+                            $("#information").css('display', 'block')
+                            protein = 0
+                            sugars = 0
+                            calcium = 0
+                            phosphorus = 0
+                            vitamin_A = 0
+                            vitamin_B6 = 0
+                            vitamin_B12 = 0
+                            vitamin_C = 0
+                            vitamin_D = 0
+                            $("#calculate").value = "submitted"
+
+                            console.log(calculation)
+
+                            var rsugar = parseFloat({{ sugar }});
+                            var rprotein = parseFloat({{ protein }});
+                            var rcalcium = parseFloat({{ calcium }});
+                            var rphosphorus = parseFloat({{ phosphorus }});
+                            var rvitamin_A = parseFloat({{ vitaminA }});
+                            var rvitamin_B6 = parseFloat({{ vitaminB6 }});
+                            var rvitamin_B12 = parseFloat({{ vitaminB12 }});
+                            var rvitamin_C = parseFloat({{ vitaminC }});
+                            var rvitamin_D = parseFloat({{ vitaminD }});
+
+                            var gsugar = (calculation[0] - rsugar) / rsugar * 100
+                            var gprotein = (calculation[1] - rprotein) / rprotein * 100
+                            var gcalcium = (calculation[2] - rcalcium) / rcalcium * 100
+                            var gphosphorus = (calculation[3] - rphosphorus) / rphosphorus * 100
+                            var gvitamin_A = (calculation[4] - rvitamin_A) / rvitamin_A * 100
+                            var gvitamin_B6 = (calculation[5] - rvitamin_B6) / rvitamin_B6 * 100
+                            var gvitamin_B12 = (calculation[6] - rvitamin_B12) / rvitamin_B12 * 100
+                            var gvitamin_C = (calculation[7] - rvitamin_C) / rvitamin_C * 100
+                            var gvitamin_D = (calculation[8] - rvitamin_D) / rvitamin_D * 100
+
+
+                            $("#sugars").text("Sugar:  " + calculation[0].toFixed(2) + " g")
+                            if (gsugar >= 0) {
+                                $("#gsugars").text(gsugar.toFixed(2) + "%")
+                                $("#gsugars").css({color: "green"})
+                            } else {
+                                $("#gsugars").text(gsugar.toFixed(2) + "%")
+                                $("#gsugars").css({color: "red"})
+                            }
+
+                            $("#protein").text("Protein:  " + calculation[1].toFixed(2) + " g")
+                            if (gprotein >= 0) {
+                                $("#gprotein").text(gprotein.toFixed(2) + "%")
+                                $("#gprotein").css({color: "green"})
+                            } else {
+                                $("#gprotein").text(gprotein.toFixed(2) + "%")
+                                $("#gprotein").css({color: "red"})
+                            }
+
+                            $("#calcium").text("Calcium:  " + calculation[2].toFixed(2) + " mg")
+                            if (gcalcium >= 0) {
+                                $("#gcalcium").text(gcalcium.toFixed(2) + "%")
+                                $("#gcalcium").css({color: "green"})
+                            } else {
+                                $("#gcalcium").text(gcalcium.toFixed(2) + "%")
+                                $("#gcalcium").css({color: "red"})
+                            }
+
+                            $("#phosphorus").text("Phosphorus:  " + calculation[3].toFixed(2) + " mg")
+                            if (gphosphorus >= 0) {
+                                $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
+                                $("#gphosphorus").css({color: "green"})
+                            } else {
+                                $("#gphosphorus").text(gphosphorus.toFixed(2) + "%")
+                                $("#gphosphorus").css({color: "red"})
+                            }
+
+                            $("#vitamin_A").text("Vitamin A:  " + calculation[4].toFixed(2) + " ug")
+                            if (gvitamin_A >= 0) {
+                                $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
+                                $("#gvitamin_A").css({color: "green"})
+                            } else {
+                                $("#gvitamin_A").text(gvitamin_A.toFixed(2) + "%")
+                                $("#gvitamin_A").css({color: "red"})
+                            }
+
+                            $("#vitamin_B6").text("Vitamin B6:  " + calculation[5].toFixed(2) + " mg")
+                            if (gvitamin_B6 >= 0) {
+                                $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
+                                $("#gvitamin_B6").css({color: "green"})
+                            } else {
+                                $("#gvitamin_B6").text(gvitamin_B6.toFixed(2) + "%")
+                                $("#gvitamin_B6").css({color: "red"})
+                            }
+                            $("#vitamin_B12").text("Vitamin B12:  " + calculation[6].toFixed(2) + " ug")
+                            if (gvitamin_B12 >= 0) {
+                                $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
+                                $("#gvitamin_B12").css({color: "green"})
+                            } else {
+                                $("#gvitamin_B12").text(gvitamin_B12.toFixed(2) + "%")
+                                $("#gvitamin_B12").css({color: "red"})
+                            }
+                            $("#vitamin_C").text("Vitamin C:  " + calculation[7].toFixed(2) + " mg")
+                            if (gvitamin_C >= 0) {
+                                $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
+                                $("#gvitamin_C").css({color: "green"})
+                            } else {
+                                $("#gvitamin_C").text(gvitamin_C.toFixed(2) + "%")
+                                $("#gvitamin_C").css({color: "red"})
+                            }
+
+                            $("#vitamin_D").text("Vitamin D:  " + calculation[8].toFixed(2) + " mg")
+                            if (gvitamin_D >= 0) {
+                                $("#gvitamin_D").text(gvitamin_D.toFixed(2) + "%")
+                                $("#gvitamin_D").css({color: "green"})
+                            } else {
+                                $("#gvitamin_D").text(gvitamin_D.toFixed(2) + "%")
+                                $("#gvitamin_D").css({color: "red"})
+                            }
+                        }
+                    } else {
+                        count++
+                        switch (true) {
+                            case count >= 0 && count <= 10:
+                                alert("The acceptable input amount should be like '100' or '100.5'.");
+                                break;
+                            default:
+                                alert("Please Do not do it again")
+                                break;
+                        }
+                    }
+                }
+            </script>
+        </div>
+    </body>
 {% endblock %}
-
-
-
-
 

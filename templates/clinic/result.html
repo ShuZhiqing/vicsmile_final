@@ -90,7 +90,7 @@
         <div class="container-body style-6">
             <div class="bc-icons-2 text-uppercase" id="replaceTop"
                  style="margin-left: 10%;margin-right: 10%; margin-top: 20px">
-                <ol class="breadcrumb indigo lighten-4" style="padding-top: 0px">
+                <ol class="breadcrumb indigo lighten-4">
                     <li class="breadcrumb-item"><a class="black-text" href="{% url 'home' %}#top"><strong>Home</strong></a><i
                             class="fa fa-caret-right mx-2" aria-hidden="true"></i></li>
                     <li class="breadcrumb-item active">Search Result</li>
@@ -259,7 +259,7 @@
                                            data-placement="right"></i><br>
                                         <button type="button" class="btn btn-info"
                                                 onclick="window.open('{{ query.website }}')">
-                                            <i class="fa fa-globe" style="font-size: inherit" title="Website"></i>
+                                            <i class="fa fa-globe" style="font-size: inherit; color: #0c5460;" title="Website"></i>
                                             Website
                                         </button>
                                         <button type="button" class="btn btn-info"
@@ -271,9 +271,11 @@
                             </div>
 
                         {% elif error_msg %}
-                            <h3>Sorry, we could not found your preferred results. But we list 10 nearest clinics for
-                                you.</h3>
                             <div class="sf-map-results">
+                            <div class="no-result">
+                            <p style="color: darkred;font-weight: 500; padding-bottom: 10px;">Sorry, we could not find your preferred results. <br> But we list 10 nearest clinics for
+                                you.</p>
+                            </div>
                                 {% for query in clinic_list|slice:"10" %}
                                     <div id="{{ query.name }}" class="sf-map-result-container" style="border: none;">
                                         <span id="{{ query.address }}" class="sf-map-result-label"></span>
@@ -469,11 +471,13 @@
                                         map.setZoom(15);
                                         document.getElementById("{{ query.name }}").style.border = 'solid #69c6ba';
                                         document.getElementById("{{ query.name }}").scrollIntoView();
-                                        document.getElementById("111").style.marginTop = '100px'
                                         clicked = true;
                                         pMarkerId = "{{ query.name }}";
                                         var latLng = marker.getPosition(); // returns LatLng object
                                         map.setCenter(latLng);
+                                        if (window.width <= 991){
+                                            document.getElementById("111").style.marginTop = '100px';
+                                        }
                                     }
                                 })(marker));
 
@@ -534,7 +538,7 @@
                                     position: new google.maps.LatLng(currentLocation.lat, currentLocation.lng),
                                     map: map,
                                     icon: {
-                                        url: "http://maps.google.com/mapfiles/ms/icons/blue-pushpin.png"
+                                        url: "https://maps.google.com/mapfiles/ms/icons/blue-pushpin.png"
                                     }
                                 });
 
@@ -1080,7 +1084,7 @@
         <script>
             function showSearchButton() {
                 if (document.getElementById("searchButton").style.display == "none") {
-                    if (navigator.userAgent.match(/(iPad|iPod|iPhone|Android)/i) != null) {
+                    if (navigator.userAgent.match(/(iPod|iPhone|Android)/i) != null) {
                         document.getElementById("searchButton").style.display = "inline";
                         document.getElementById('111').style.marginBottom = '10px';
                     }
